@@ -1,23 +1,23 @@
 <template>
   <div id="app" data-theme="aqua">
     <header>
-      <NavbarComponent/>
+      <NavbarComponent />
     </header>
     <main>
       <router-view> </router-view>
     </main>
-    <FooterComponent/>
+    <FooterComponent />
   </div>
 </template>
 <script>
-import NavbarComponent from "@/components/navbar-component.vue"
-import FooterComponent from "@/components/footer-component.vue"
+import NavbarComponent from "@/components/navbar-component.vue";
+import FooterComponent from "@/components/footer-component.vue";
 export default {
-  components:{
+  components: {
     NavbarComponent,
-    FooterComponent
-  }
-}
+    FooterComponent,
+  },
+};
 </script>
 <style lang="scss"></style>
 
