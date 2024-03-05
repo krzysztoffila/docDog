@@ -3,13 +3,16 @@
     <header>
       <NavbarComponent/>
     </header>
+    <main>
+      <router-view> </router-view>
+    </main>
   </div>
 </template>
 <script>
 import NavbarComponent from "@/components/navbar-component.vue"
 export default {
   components:{
-    NavbarComponent
+    NavbarComponent,
   }
 }
 </script>
