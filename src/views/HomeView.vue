@@ -39,7 +39,7 @@
               required
             />
             <label class="label">
-              <router-link to="/registeruser">
+              <router-link to="/register">
                 <a href="#" class="label-text-alt link link-hover"
                   >Already not registred? - Register!</a
                 >
