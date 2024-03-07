@@ -1,7 +1,9 @@
 <template>
   <div class="navbar bg-base-100">
     <div class="flex-1">
-      <a class="btn btn-ghost text-xl">docDog</a>
+      <router-link to="/">
+        <a class="btn btn-ghost text-xl">docDog</a>
+      </router-link>
     </div>
     <div class="flex-none gap-2">
       <input type="checkbox" value="forest" class="toggle theme-controller" />
@@ -19,10 +21,14 @@
           class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
         >
           <li>
-            <a class="justify-between"> Profile </a>
+            <router-link to="/profile"><a>Profile</a></router-link>
           </li>
-          <li><a>Settings</a></li>
-          <li><a>Login</a></li>
+          <li>
+            <router-link to="/registervisit"><a>Register Visit</a></router-link>
+          </li>
+          <li>
+            <router-link to="/login"><a>Login</a></router-link>
+          </li>
         </ul>
       </div>
     </div>
