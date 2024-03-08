@@ -1,7 +1,12 @@
 <template>
-  <div class="relative flex flex-col justify-center h-screen overflow-hidden">
-    <div class="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
-      <h1 class="text-3xl font-semibold text-center text-blue-800">Register</h1>
+  <div
+    data-theme="light"
+    class="relative flex flex-col justify-center h-screen overflow-hidden"
+  >
+    <div
+      class="w-full p-6 m-auto bg-white rounded-md shadow-md ring-2 ring-gray-800/50 lg:max-w-xl"
+    >
+      <h1 class="text-3xl font-semibold text-center text-gray-700">Register</h1>
       <form class="space-y-4">
         <div>
           <label class="label">
@@ -10,7 +15,7 @@
           <input
             type="text"
             placeholder="Name"
-            class="w-full input input-bordered input-primary"
+            class="w-full input input-bordered"
           />
         </div>
         <div>
@@ -20,7 +25,7 @@
           <input
             type="text"
             placeholder="Email Address"
-            class="w-full input input-bordered input-primary"
+            class="w-full input input-bordered"
           />
         </div>
         <div>
@@ -30,7 +35,7 @@
           <input
             type="password"
             placeholder="Enter Password"
-            class="w-full input input-bordered input-primary"
+            class="w-full input input-bordered"
           />
         </div>
         <div>
@@ -40,19 +45,18 @@
           <input
             type="password"
             placeholder="Confirm Password"
-            class="w-full input input-bordered input-primary"
+            class="w-full input input-bordered"
           />
         </div>
         <div>
-          <button class="btn btn-block btn-primary">Sign Up</button>
+          <button class="btn btn-block">Sign Up</button>
         </div>
-        <span
-          >Already have an account ?
-          <a
-            href="/login"
-            class="text-blue-600 hover:text-blue-800 hover:underline"
-            >Login</a
-          ></span
+
+        <router-link to="/login">
+          Already have an account ?
+          <span class="text-blue-600 hover:text-blue-800 hover:underline"
+            >Login
+          </span></router-link
         >
       </form>
     </div>
@@ -63,5 +67,4 @@
 export default {};
 </script>
 
-<style>
-</style>
+<style></style>
