@@ -13,7 +13,13 @@
         placeholder="Password"
         class="font-asap block rounded-md text-black bg-white w-full border-0 p-4 my-4"
       />
-      <b-button pill variant="success">Login</b-button>
+      <div class="flex justify-evenly">
+        <button class="btn btn-success text-white">Login</button>
+
+        <button class="btn btn-warning text-white">
+          <router-link to="/register"> Register </router-link>
+        </button>
+      </div>
     </form>
   </div>
 </template>
