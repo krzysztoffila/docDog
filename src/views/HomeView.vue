@@ -27,7 +27,7 @@ export default {
           We're here to provide you with a seamless registration process and
           expert care for your furry companions.`,
       backgroundImageUrl: {
-        backgroundImage: `url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+        backgroundImage: `url('https://vet-med.pl/wp-content/uploads/2023/06/Vetmed-2.jpg')`,
       },
     };
   },

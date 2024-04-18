@@ -1,14 +1,17 @@
 <template>
   <div class="login__page flex-container">
     <form
+      @submit.prevent="loginUser"
       class="login bg-gradient-to-b from-blue-500 via-blue-400 to-blue-300 p-10 rounded-lg shadow-lg relative transform -translate-x-1/2 -translate-y-1/2 transition-shadow"
     >
       <input
+        v-model="email"
         type="text"
         placeholder="Email"
         class="font-asap block rounded-md text-black bg-white w-full border-0 p-4 my-4"
       />
       <input
+        v-model="password"
         type="password"
         placeholder="Password"
         class="font-asap block rounded-md text-black bg-white w-full border-0 p-4 my-4"
@@ -23,7 +26,26 @@
     </form>
   </div>
 </template>
-
+<script>
+export default {
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    loginUser() {
+      const userData = {
+        email: this.email,
+        password: this.password,
+      };
+      const { email, password } = userData;
+      alert(`Data: ${email}, password: ${password}`);
+    },
+  },
+};
+</script>
 <style lang="scss">
 .flex-container {
   display: flex;
