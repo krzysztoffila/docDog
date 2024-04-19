@@ -1,0 +1,1 @@
+1. RegisterUser - Jeśli hasła nie są prawidłowe to na czerwono przycisk zablokowany, jeśli poprawne to odblokowany na zielono

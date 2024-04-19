@@ -7,22 +7,13 @@
       class="w-full p-6 m-auto bg-white rounded-md shadow-md ring-2 ring-gray-800/50 lg:max-w-xl"
     >
       <h1 class="text-3xl font-semibold text-center text-gray-700">Register</h1>
-      <form class="space-y-4">
-        <div>
-          <label class="label">
-            <span class="text-base label-text">Name</span>
-          </label>
-          <input
-            type="text"
-            placeholder="Name"
-            class="w-full input input-bordered"
-          />
-        </div>
+      <form @submit.prevent="registerUser" class="space-y-4">
         <div>
           <label class="label">
             <span class="text-base label-text">Email</span>
           </label>
           <input
+            v-model="email"
             type="text"
             placeholder="Email Address"
             class="w-full input input-bordered"
@@ -33,6 +24,7 @@
             <span class="text-base label-text">Password</span>
           </label>
           <input
+            v-model="password"
             type="password"
             placeholder="Enter Password"
             class="w-full input input-bordered"
@@ -43,13 +35,19 @@
             <span class="text-base label-text">Confirm Password</span>
           </label>
           <input
+            v-model="confirmPassword"
             type="password"
             placeholder="Confirm Password"
             class="w-full input input-bordered"
           />
         </div>
+        <div style="height: 20px">
+          <p class="text-red-800" v-show="password !== confirmPassword">
+            Hasła nie są poprawne
+          </p>
+        </div>
         <div>
-          <button class="btn btn-block">Sign Up</button>
+          <button class="btn btn-block" :class="signUpBtnClass">Sign Up</button>
         </div>
 
         <router-link to="/login">
@@ -64,7 +62,37 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      email: "",
+      password: "",
+      confirmPassword: "",
+      passwordsValid: false,
+    };
+  },
+  computed: {
+    signUpBtnClass() {
+      return this.password !== this.confirmPassword
+        ? "btn-disabled"
+        : "btn-active";
+    },
+  },
+  methods: {
+    registerUser() {
+      const registeredData = {
+        email: this.email,
+        password: this.password,
+        confirmPassword: this.confirmPassword,
+      };
+      const { email, password, confirmPassword } = registeredData;
+      alert(`DATA: ${email}, ${password}, ${confirmPassword}`);
+    },
+    isValid() {
+      this.passwordsValid = !this.passwordsValid;
+    },
+  },
+};
 </script>
 
 <style></style>
