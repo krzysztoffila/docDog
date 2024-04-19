@@ -18,8 +18,7 @@
       />
       <div class="flex justify-evenly">
         <button class="btn btn-success text-white">Login</button>
-
-        <button class="btn btn-warning text-white">
+        <button class="btn btn-warning text-white" @click.stop>
           <router-link to="/register"> Register </router-link>
         </button>
       </div>

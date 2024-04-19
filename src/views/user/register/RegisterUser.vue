@@ -43,7 +43,7 @@
         </div>
         <div style="height: 20px">
           <p class="text-red-800" v-show="password !== confirmPassword">
-            Hasła nie są poprawne
+            Passwords are incorrect
           </p>
         </div>
         <div>
