@@ -20,16 +20,23 @@ export default {
     HeadingLoginComponent,
   },
   data() {
-    return {
-      loginText: `Login now!`,
-      heroContent: `Join us and experience the future of pet healthcare registration. Sign
+    return {};
+  },
+  computed: {
+    loginText() {
+      return `Login now!`;
+    },
+    heroContent() {
+      return `Join us and experience the future of pet healthcare registration. Sign
           up for quick and convenient access to online veterinary appointments.
           We're here to provide you with a seamless registration process and
-          expert care for your furry companions.`,
-      backgroundImageUrl: {
+          expert care for your furry companions.`;
+    },
+    backgroundImageUrl() {
+      return {
         backgroundImage: `url('https://vet-med.pl/wp-content/uploads/2023/06/Vetmed-2.jpg')`,
-      },
-    };
+      };
+    },
   },
 };
 </script>
