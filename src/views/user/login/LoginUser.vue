@@ -18,9 +18,11 @@
       />
       <div class="flex justify-evenly">
         <button class="btn btn-success text-white">Login</button>
-        <button class="btn btn-warning text-white" @click.stop>
-          <router-link to="/register"> Register </router-link>
-        </button>
+        <div @click.stop>
+          <router-link to="/register" class="btn btn-warning text-white">
+            Register
+          </router-link>
+        </div>
       </div>
     </form>
   </div>
@@ -40,7 +42,7 @@ export default {
         password: this.password,
       };
       const { email, password } = userData;
-      alert(`Data: ${email}, password: ${password}`);
+      alert(`login Data: ${email}, password: ${password}`);
     },
   },
 };
