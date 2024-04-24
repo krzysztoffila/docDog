@@ -10,8 +10,8 @@
   </div>
 </template>
 <script>
-import NavbarComponent from "@/components/navbar-component.vue";
-import FooterComponent from "@/components/footer-component.vue";
+import NavbarComponent from "@/components/layout/TheNavbar.vue";
+import FooterComponent from "@/components/layout/TheFooter.vue";
 export default {
   components: {
     NavbarComponent,
