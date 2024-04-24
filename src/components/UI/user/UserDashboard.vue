@@ -1,5 +1,5 @@
 <template>
-  <div class="user-profile-dashboard h-screen">
+  <div class="user-profile-dashboard">
     <div class="user-profile-dashboard__left w-2/5">
       <!-- AVATAR -->
       <!-- DANE -->

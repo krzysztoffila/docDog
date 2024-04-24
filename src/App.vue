@@ -1,21 +1,21 @@
 <template>
   <div id="app" data-theme="aqua">
     <header>
-      <NavbarComponent />
+      <TheNavbar />
     </header>
     <main>
       <router-view> </router-view>
     </main>
-    <FooterComponent />
+    <TheFooter />
   </div>
 </template>
 <script>
-import NavbarComponent from "@/components/layout/TheNavbar.vue";
-import FooterComponent from "@/components/layout/TheFooter.vue";
+import TheNavbar from "@/components/layout/TheNavbar.vue";
+import TheFooter from "@/components/layout/TheFooter.vue";
 export default {
   components: {
-    NavbarComponent,
-    FooterComponent,
+    TheNavbar,
+    TheFooter,
   },
 };
 </script>
