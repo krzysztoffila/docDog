@@ -1,7 +1,7 @@
 <template>
   <div class="login__page flex-container">
     <form
-      @submit.prevent="loginUser"
+      @submit.prevent="submitFormLogin"
       class="login bg-gradient-to-b from-blue-500 via-blue-400 to-blue-300 p-10 rounded-lg shadow-lg relative transform -translate-x-1/2 -translate-y-1/2 transition-shadow"
     >
       <input
@@ -36,13 +36,15 @@ export default {
     };
   },
   methods: {
-    loginUser() {
+    submitFormLogin() {
       const userData = {
         email: this.email,
         password: this.password,
       };
       const { email, password } = userData;
       alert(`login Data: ${email}, password: ${password}`);
+      this.email = "";
+      this.password = "";
     },
   },
 };
