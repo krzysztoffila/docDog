@@ -91,12 +91,6 @@ export default {
   },
   methods: {
     registerUser() {
-      const registeredData = {
-        email: this.email,
-        password: this.password,
-        confirmPassword: this.confirmPassword,
-      };
-      const { email, password, confirmPassword } = registeredData;
       fetch("https://doc-dog-42e1c-default-rtdb.firebaseio.com/users.json", {
         method: "POST",
         headers: {
