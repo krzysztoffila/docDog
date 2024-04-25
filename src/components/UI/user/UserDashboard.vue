@@ -1,12 +1,12 @@
 <template>
-  <div class="user-profile-dashboard">
-    <div class="user-profile-dashboard__left w-2/5">
+  <div class="user-dashboard-container">
+    <div class="user-dashboard-container__left w-2/5">
       <!-- AVATAR -->
-      <!-- DANE -->
-    </div>
-    <div class="user-profile-dashboard__right w-3/5">
-      <!-- WIZYTY -->
       <!-- KALENDARZ -->
+    </div>
+    <div class="user-dashboard-container__right w-3/5">
+      <!-- DANE -->
+      <!-- WIZYTY -->
     </div>
   </div>
 </template>
@@ -18,11 +18,11 @@ export default {
   },
 };
 </script>
-<style scoped>
-.user-profile-dashboar {
+<!-- <style>
+.user-dashboard-container {
 }
-.user-profile-dashboard__left {
+.user-dashboard-container__left {
 }
-.user-profile-dashboard__right {
+.user-dashboard-containerd__right {
 }
-</style>
+</style> -->
