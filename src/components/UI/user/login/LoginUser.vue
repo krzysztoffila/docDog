@@ -18,7 +18,7 @@
       />
       <div class="flex justify-evenly">
         <button class="btn btn-success text-white">Login</button>
-        <div @click.stop>
+        <div>
           <router-link to="/register" class="btn btn-warning text-white">
             Register
           </router-link>
@@ -61,7 +61,6 @@ export default {
   background-image: linear-gradient(to bottom, #0dcaf0, #1d4ed8, #1d4ed8);
   padding: 40px 30px 30px 30px;
   border-radius: 10px;
-  margin-top: 400px;
   position: absolute;
   top: 50%;
   left: 50%;
