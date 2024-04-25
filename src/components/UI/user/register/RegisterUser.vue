@@ -17,7 +17,11 @@
             type="text"
             placeholder="Email Address"
             class="w-full input input-bordered"
+            @blur="validateInput"
           />
+          <p class="text-red-800" v-if="emailValidity === 'invalid'">
+            Please enter email address
+          </p>
         </div>
         <div>
           <label class="label">
@@ -42,7 +46,7 @@
           />
         </div>
         <div style="height: 20px">
-          <p class="text-red-800" v-show="password !== confirmPassword">
+          <p class="text-red-800" v-if="password !== confirmPassword">
             Passwords are incorrect
           </p>
         </div>
@@ -69,13 +73,20 @@ export default {
       password: "",
       confirmPassword: "",
       passwordsValid: false,
+      emailValidity: "pending",
     };
   },
   computed: {
     signUpBtnClass() {
-      return this.password !== this.confirmPassword
-        ? "btn-disabled"
-        : "btn-active";
+      if (
+        this.password !== this.confirmPassword ||
+        this.password === "" ||
+        this.confirmPassword === ""
+      ) {
+        return "btn-disabled";
+      } else {
+        return "btn-active";
+      }
     },
   },
   methods: {
@@ -87,9 +98,19 @@ export default {
       };
       const { email, password, confirmPassword } = registeredData;
       alert(`DATA: ${email}, ${password}, ${confirmPassword}`);
+      this.email = "";
+      this.password = "";
+      this.confirmPassword = "";
     },
     isValid() {
       this.passwordsValid = !this.passwordsValid;
+    },
+    validateInput() {
+      if (this.email === "") {
+        this.emailValidity = "invalid";
+      } else {
+        this.emailValidity = "valid";
+      }
     },
   },
 };
