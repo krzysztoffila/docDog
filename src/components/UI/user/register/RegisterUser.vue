@@ -97,7 +97,20 @@ export default {
         confirmPassword: this.confirmPassword,
       };
       const { email, password, confirmPassword } = registeredData;
-      alert(`DATA: ${email}, ${password}, ${confirmPassword}`);
+      fetch("https://doc-dog-42e1c-default-rtdb.firebaseio.com/users.json", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: this.email,
+          password: this.password,
+        }),
+      });
+      // [TODO:] Modal ze poprawnie zarejstrowano
+      // alert(
+      //   `Poprawnie zarejestrowano: ${email}, ${password}, ${confirmPassword}`
+      // );
       this.email = "";
       this.password = "";
       this.confirmPassword = "";
