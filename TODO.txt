@@ -1,18 +1,33 @@
----MAIN STRUCTURE
-[TODO]Porobić base buttony dla docDog
+------------
+----TODO----
+------------
+---MAIN STRUCTURE---
+[TODO] Porobić base buttony dla docDog 
+       - czy potrzeba ?
 
----REGISTER
-[TODO] AXIOS
-[TODO] ENV PROCESS dla endpointow
+---REGISTER---
+[TODO] AXIOS + config
+[TODO] ENV PROCESS dla endpointow:
+       - zainstalować env
+       - porobić zmienne ze sciezkami
+       - porobić testy 
 -
-[OK] RegisterUser - Jeśli hasła nie są prawidłowe to na czerwono przycisk zablokowany, jeśli poprawne to odblokowany na zielono - jest disabled
-[OK] Zerowanie formularzy 
-[OK] TRIM na formach
 
----USER PROFILE
-[TODO] avatar, kalendarz + wizyty, dane osobowe, button dodaj wizyte
-[TODO] calendar.js
+---USER PROFILE---
+[TODO] utworzyc widok user probile zawierający:
+        - avatar, kalendarz(pozniej w calendar.js) + wizyty, dane osobowe, button dodaj wizyte
+        - RWD
+[TODO] Zaimplementowac calendar.js i dołączyć do widoku usera
 
----LOGIN
-[TODO] pobieranie userow z firebase, cookies, zmiana login/logout
+---LOGIN---
+[TODO] Logowanie uzytkownika: 
+        - cookies,
+        - pobranie usera z firebase
+        - zmiana login/logout
 
+------------
+----DONE----
+------------
+[DONE] RegisterUser - Jeśli hasła nie są prawidłowe to na czerwono przycisk zablokowany, jeśli poprawne to odblokowany na zielono - jest disabled
+[DONE] Zerowanie formularzy 
+[DONE] TRIM na formach
