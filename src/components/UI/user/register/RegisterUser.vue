@@ -85,7 +85,7 @@ export default {
       ) {
         return "btn-disabled";
       } else {
-        return "btn-active";
+        return "btn-active btn-success text-white";
       }
     },
   },
