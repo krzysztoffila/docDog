@@ -1,8 +1,17 @@
->>MAIN
+---MAIN STRUCTURE
 [TODO]Porobić base buttony dla docDog
->>REGISTER
-[TOFIX]RegisterUser - Jeśli hasła nie są prawidłowe to na czerwono przycisk zablokowany, jeśli poprawne to odblokowany na zielono
-[OK]Zerowanie formularzy 
-[OK]TRIM na formach
->>USER PROFILE
-[TODO]avatar, kalendarz + wizyty, dane osobowe
+
+---REGISTER
+[TODO] AXIOS
+[TODO] ENV PROCESS dla endpointow
+[TOFIX] RegisterUser - Jeśli hasła nie są prawidłowe to na czerwono przycisk zablokowany, jeśli poprawne to odblokowany na zielono
+[OK] Zerowanie formularzy 
+[OK] TRIM na formach
+
+---USER PROFILE
+[TODO] avatar, kalendarz + wizyty, dane osobowe, button dodaj wizyte
+[TODO] calendar.js
+
+---LOGIN
+[TODO] pobieranie userow z firebase, cookies, zmiana login/logout
+
