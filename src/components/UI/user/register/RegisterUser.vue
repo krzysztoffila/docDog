@@ -13,7 +13,7 @@
             <span class="text-base label-text">Email</span>
           </label>
           <input
-            v-model="email"
+            v-model.trim="email"
             type="text"
             placeholder="Email Address"
             class="w-full input input-bordered"
@@ -79,6 +79,7 @@ export default {
   computed: {
     signUpBtnClass() {
       if (
+        this.email === "" ||
         this.password !== this.confirmPassword ||
         this.password === "" ||
         this.confirmPassword === ""
@@ -90,6 +91,16 @@ export default {
     },
   },
   methods: {
+    validateEmail(emailInput) {
+      let mailformat = /^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$/;
+      if (emailInput.value.match(mailformat)) {
+        alert("Wprowadziłeś poprawny adres e-mail!");
+        return true;
+      } else {
+        alert("Wprowadziłeś nieprawidłowy adres e-mail!");
+        return false;
+      }
+    },
     registerUser() {
       fetch("https://doc-dog-42e1c-default-rtdb.firebaseio.com/users.json", {
         method: "POST",
