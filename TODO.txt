@@ -6,7 +6,6 @@
        - czy potrzeba ?
 
 ---REGISTER---
-[TODO] AXIOS + config
 [TODO] ENV PROCESS dla endpointow:
        - zainstalować env
        - porobić zmienne ze sciezkami
@@ -31,3 +30,4 @@
 [DONE] RegisterUser - Jeśli hasła nie są prawidłowe to na czerwono przycisk zablokowany, jeśli poprawne to odblokowany na zielono - jest disabled
 [DONE] Zerowanie formularzy 
 [DONE] TRIM na formach
+[DONE] AXIOS + config

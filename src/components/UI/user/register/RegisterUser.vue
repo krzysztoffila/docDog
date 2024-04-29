@@ -17,7 +17,6 @@
             type="text"
             placeholder="Email Address"
             class="w-full input input-bordered"
-            @blur="validateInput"
           />
           <p class="text-red-800" v-if="emailValidity === 'invalid'">
             Please enter a valid email address
@@ -66,6 +65,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
@@ -91,35 +92,27 @@ export default {
   },
   methods: {
     async registerUser() {
-      // const validateEmailResult = this.validateEmail(this.email);
-      // if (validateEmailResult === true) {
       try {
-        const response = await fetch(
+        const response = await axios.post(
           "https://doc-dog-42e1c-default-rtdb.firebaseio.com/users.json",
           {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              email: this.email,
-              password: this.password,
-            }),
+            email: this.email,
+            password: this.password,
           }
         );
-        if (response.ok) {
+        if (response.status === 200) {
           this.email = "";
           this.password = "";
           this.confirmPassword = "";
           alert("User was successfully registered!");
         } else {
-          console.error("Registration failed:", response.statusText);
+          throw new Error("Registration failed");
         }
       } catch (error) {
-        console.error("Error during registration:", error);
+        console.error(error);
       }
-      // }
     },
+
     validateEmail(emailInput) {
       const mailformat =
         /^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$/;
