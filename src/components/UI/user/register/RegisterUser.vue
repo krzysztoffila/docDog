@@ -20,7 +20,7 @@
             @blur="validateInput"
           />
           <p class="text-red-800" v-if="emailValidity === 'invalid'">
-            Please enter email address
+            Please enter a valid email address
           </p>
         </div>
         <div>
@@ -47,7 +47,7 @@
         </div>
         <div style="height: 20px">
           <p class="text-red-800" v-if="password !== confirmPassword">
-            Passwords are incorrect
+            Passwords do not match
           </p>
         </div>
         <div>
@@ -55,11 +55,11 @@
         </div>
 
         <router-link to="/login">
-          Already have an account ?
+          Already have an account?
           <span class="text-blue-600 hover:text-blue-800 hover:underline"
             >Login
-          </span></router-link
-        >
+          </span>
+        </router-link>
       </form>
     </div>
   </div>
@@ -72,7 +72,6 @@ export default {
       email: "",
       password: "",
       confirmPassword: "",
-      passwordsValid: false,
       emailValidity: "pending",
     };
   },
@@ -91,43 +90,44 @@ export default {
     },
   },
   methods: {
+    async registerUser() {
+      // const validateEmailResult = this.validateEmail(this.email);
+      // if (validateEmailResult === true) {
+      try {
+        const response = await fetch(
+          "https://doc-dog-42e1c-default-rtdb.firebaseio.com/users.json",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email: this.email,
+              password: this.password,
+            }),
+          }
+        );
+        if (response.ok) {
+          this.email = "";
+          this.password = "";
+          this.confirmPassword = "";
+          alert("User was successfully registered!");
+        } else {
+          console.error("Registration failed:", response.statusText);
+        }
+      } catch (error) {
+        console.error("Error during registration:", error);
+      }
+      // }
+    },
     validateEmail(emailInput) {
-      let mailformat = /^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$/;
-      if (emailInput.value.match(mailformat)) {
-        alert("Wprowadziłeś poprawny adres e-mail!");
+      const mailformat =
+        /^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$/;
+      if (emailInput.match(mailformat)) {
         return true;
       } else {
-        alert("Wprowadziłeś nieprawidłowy adres e-mail!");
-        return false;
-      }
-    },
-    registerUser() {
-      fetch("https://doc-dog-42e1c-default-rtdb.firebaseio.com/users.json", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: this.email,
-          password: this.password,
-        }),
-      });
-      // [TODO:] Modal ze poprawnie zarejstrowano
-      // alert(
-      //   `Poprawnie zarejestrowano: ${email}, ${password}, ${confirmPassword}`
-      // );
-      this.email = "";
-      this.password = "";
-      this.confirmPassword = "";
-    },
-    isValid() {
-      this.passwordsValid = !this.passwordsValid;
-    },
-    validateInput() {
-      if (this.email === "") {
         this.emailValidity = "invalid";
-      } else {
-        this.emailValidity = "valid";
+        return false;
       }
     },
   },
