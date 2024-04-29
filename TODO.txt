@@ -1,7 +1,8 @@
-1. RegisterUser - Jeśli hasła nie są prawidłowe to na czerwono przycisk zablokowany, jeśli poprawne to odblokowany na zielono
-2. Czy rozdzielić na dynamiczne komponenty Login/Register(widok z login)
-3. Porobić base buttony dla docDog
-4. Zerowanie formularzy 
-TRIM na formach
-SEKCJA PROFIL:
-avatar, kalendarz + wizyty, dane osobowe
+>>MAIN
+[TODO]Porobić base buttony dla docDog
+>>REGISTER
+[TOFIX]RegisterUser - Jeśli hasła nie są prawidłowe to na czerwono przycisk zablokowany, jeśli poprawne to odblokowany na zielono
+[OK]Zerowanie formularzy 
+[OK]TRIM na formach
+>>USER PROFILE
+[TODO]avatar, kalendarz + wizyty, dane osobowe
