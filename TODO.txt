@@ -4,18 +4,15 @@
 ---MAIN STRUCTURE---
 [TODO] Porobić base buttony dla docDog 
        - czy potrzeba ?
+[TODO] Zrobić slot z badge
 
 ---REGISTER---
 [TODO] ENV PROCESS dla endpointow:
        - zainstalować env
        - porobić zmienne ze sciezkami
        - porobić testy 
--
 
 ---USER PROFILE---
-[TODO] utworzyc widok user probile zawierający:
-        - avatar, kalendarz(pozniej w calendar.js) + wizyty, dane osobowe, button dodaj wizyte
-        - RWD
 [TODO] Zaimplementowac calendar.js i dołączyć do widoku usera
 
 ---LOGIN---
@@ -31,3 +28,6 @@
 [DONE] Zerowanie formularzy 
 [DONE] TRIM na formach
 [DONE] AXIOS + config
+[DONE] utworzyc widok user probile zawierający:
+        - avatar, kalendarz(pozniej w calendar.js) + wizyty, dane osobowe, button dodaj wizyte
+        - RWD
