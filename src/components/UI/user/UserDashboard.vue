@@ -13,21 +13,8 @@
       <div class="h-64 bg-black"></div>
     </div>
     <div class="user-dashboard-container__right w-full md:w-3/5 p-8">
-      <!-- DANE OSOBOWE -->
       <div class="mb-8">
-        <h2 class="text-lg font-semibold mb-4">Personal Information</h2>
-        <input
-          type="text"
-          value="example@example.com"
-          class="block input input-bordered mb-4"
-          disabled
-        />
-        <input
-          type="text"
-          value="John Doe"
-          class="block input input-bordered"
-          disabled
-        />
+        <PersonalInformation />
       </div>
       <div class="mb-8">
         <h2 class="text-lg font-semibold mb-4">Your Appointments</h2>
@@ -46,7 +33,12 @@
 </template>
 
 <script>
+import PersonalInformation from "./PersonalInformation.vue";
+
 export default {
+  components: {
+    PersonalInformation,
+  },
   computed: {
     userImageUrl() {
       return "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg";
