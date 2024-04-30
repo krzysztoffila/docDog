@@ -10,23 +10,19 @@
         <img :src="userImageUrl" alt="Avatar" class="rounded-full h-24 w-24" />
       </div>
       <!-- CALENDAR.JS -->
-      <div class="h-64 bg-black"></div>
+      <div class="h-64 bg-primary"></div>
     </div>
     <div class="user-dashboard-container__right w-full md:w-3/5 p-8">
       <div class="mb-8">
         <PersonalInformation />
       </div>
       <div class="mb-8">
-        <h2 class="text-lg font-semibold mb-4">Your Appointments</h2>
-        <!-- Wyświetl listę wizyt użytkownika -->
-        <ul>
-          <li>Appointment 1</li>
-          <li>Appointment 2</li>
-          <!-- Dodaj więcej wizyt, jakie użytkownik ma -->
-        </ul>
+        <AppointmentList />
       </div>
       <div>
-        <button class="btn btn-primary">Add Appointment</button>
+        <router-link to="/registervisit">
+          <button class="btn btn-primary">Add Appointment</button>
+        </router-link>
       </div>
     </div>
   </div>
@@ -34,10 +30,12 @@
 
 <script>
 import PersonalInformation from "./PersonalInformation.vue";
+import AppointmentList from "./appointments/AppointmentList.vue";
 
 export default {
   components: {
     PersonalInformation,
+    AppointmentList,
   },
   computed: {
     userImageUrl() {
