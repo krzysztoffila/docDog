@@ -1,5 +1,5 @@
 <template>
-  <div class="hero min-h-screen bg-cover bg-center" :style="backgroundImageUrl">
+  <div class="hero min-h-screen bg-cover bg-center">
     <div class="hero-content flex-col lg:flex-row-reverse">
       <div class="text-center lg:text-left glass p-5 rounded text-white">
         <h1 class="text-5xl font-bold">{{ loginText }}</h1>
@@ -20,11 +20,6 @@ export default {
     HeadingLogin,
   },
   computed: {
-    backgroundImageUrl() {
-      return {
-        backgroundImage: `url('https://vet-med.pl/wp-content/uploads/2023/06/Vetmed-2.jpg')`,
-      };
-    },
     loginText() {
       return "Login now!";
     },
@@ -46,5 +41,6 @@ export default {
 .hero {
   color: #0dcaf0;
   padding: 300px 50px;
+  background-image: url("@/assets/header-background-image.webp");
 }
 </style>
