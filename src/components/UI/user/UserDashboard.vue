@@ -7,7 +7,7 @@
       class="user-dashboard-container__left w-full md:w-2/5 mb-8 md:mb-0 md:mr-8 p-8"
     >
       <div class="flex justify-center items-center h-64 mb-8">
-        <img :src="userImageUrl" alt="Avatar" class="rounded-full h-24 w-24" />
+        <img :src="userImageUrl" alt="Avatar" class="w-24 rounded-xl" />
       </div>
       <!-- CALENDAR.JS -->
       <div class="h-64 bg-primary"></div>
@@ -39,7 +39,7 @@ export default {
   },
   computed: {
     userImageUrl() {
-      return "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg";
+      return "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg";
     },
   },
 };
