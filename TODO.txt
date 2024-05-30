@@ -1,12 +1,16 @@
 ------------
 ----TODO----
 ------------
+
 ---MAIN STRUCTURE---
 [TODO] Porobić base buttony dla docDog 
        - czy potrzeba ?
 [TODO] Zrobić slot z badge
+[TODO] Poprawić link do awatara
+[TODO] Rozbic na mniejsze komponenty to co się da
 
 ---REGISTER---
+[TODO] Wybrać bazę danych firebase/node.js
 [TODO] ENV PROCESS dla endpointow:
        - zainstalować env
        - porobić zmienne ze sciezkami
@@ -18,7 +22,7 @@
 ---LOGIN---
 [TODO] Logowanie uzytkownika: 
         - cookies,
-        - pobranie usera z firebase
+        - pobranie usera z firebase/node.js
         - zmiana login/logout
 
 ------------
