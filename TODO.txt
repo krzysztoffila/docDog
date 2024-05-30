@@ -5,7 +5,6 @@
 ---MAIN STRUCTURE---
 [TODO] Porobić base buttony dla docDog 
        - czy potrzeba ?
-[TODO] Poprawić link do awatara
 [TODO] Rozbic na mniejsze komponenty to co się da
 
 ---REGISTER---
@@ -35,3 +34,4 @@
         - avatar, kalendarz(pozniej w calendar.js) + wizyty, dane osobowe, button dodaj wizyte
         - RWD
 [DONE] Zrobić slot z badge
+[DONE] Poprawić link do awatara
