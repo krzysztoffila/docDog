@@ -16,7 +16,10 @@
 
 ---USER PROFILE---
 [TODO] Zaimplementowac calendar.js i dołączyć do widoku usera
-
+[TODO] DODAĆ PRZEJSCIE DO ADD APPIONTMENT 
+        -> KALENDARZ + LEKARZ 
+        -> POTWIERDZ WIZYTĘ(PROPS Z KALENDARZ + LEKAR) 
+        -> WYPLUWA NAM DO LIST WIZYT NA PENDING(EMIT DO USER PROFILE)
 ---LOGIN---
 [TODO] Logowanie uzytkownika: 
         - cookies,
