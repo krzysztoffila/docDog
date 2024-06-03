@@ -2,10 +2,18 @@
 ----TODO----
 ------------
 
+---COMPONENTS---
+[TODO][COMPONENT] Utworzyc komponent lekarzy + zdjęcia
+[TODO][COMPONENT] Zaimplementowac calendar.js i dołączyć do widoku usera(wybrać UI kalendarz)
+
 ---MAIN STRUCTURE---
 [TODO] Porobić base buttony dla docDog 
        - czy potrzeba ?
-[TODO] Rozbic na mniejsze komponenty to co się da
+[TODO][DESTRUKTURYZACJA] Rozbic na mniejsze komponenty to co się da
+[TODO] DODAĆ PRZEJSCIE DO ADD APPIONTMENT 
+        -> KALENDARZ + LEKARZ 
+        -> POTWIERDZ WIZYTĘ(PROPS Z KALENDARZ[COMPONENT] + LEKARZ[COMPONENT]) 
+        -> WYPLUWA NAM DO LIST WIZYT NA PENDING(EMIT DO USER PROFILE)
 
 ---REGISTER---
 [TODO] Wybrać bazę danych firebase/node.js
@@ -14,18 +22,13 @@
        - porobić zmienne ze sciezkami
        - porobić testy 
 
----USER PROFILE---
-[TODO] Zaimplementowac calendar.js i dołączyć do widoku usera
-[TODO] DODAĆ PRZEJSCIE DO ADD APPIONTMENT 
-        -> KALENDARZ + LEKARZ 
-        -> POTWIERDZ WIZYTĘ(PROPS Z KALENDARZ + LEKAR) 
-        -> WYPLUWA NAM DO LIST WIZYT NA PENDING(EMIT DO USER PROFILE)
 ---LOGIN---
 [TODO] Logowanie uzytkownika: 
         - cookies,
         - pobranie usera z firebase/node.js
         - zmiana login/logout
 
+---USER PROFILE---
 ------------
 ----DONE----
 ------------
