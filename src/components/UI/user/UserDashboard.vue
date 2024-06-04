@@ -10,7 +10,7 @@
         <img :src="userImageUrl" alt="Avatar" class="w-24 rounded-xl" />
       </div>
       <!-- CALENDAR.JS -->
-      <AppointmentCalendar />
+      <TheCalendar />
       <!-- <div class="h-64 bg-primary"></div> -->
     </div>
     <div class="user-dashboard-container__right w-full md:w-3/5 p-8">
@@ -32,13 +32,13 @@
 <script>
 import PersonalInformation from "./PersonalInformation.vue";
 import AppointmentList from "./appointments/AppointmentList.vue";
-import AppointmentCalendar from "./appointments/AppointmentCalendar.vue";
+import TheCalendar from "./TheCalendar.vue";
 
 export default {
   components: {
     PersonalInformation,
     AppointmentList,
-    AppointmentCalendar,
+    TheCalendar,
   },
   computed: {
     userImageUrl() {
