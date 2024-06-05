@@ -48,3 +48,10 @@ export default {
 };
 </script>
 
+<style scoped>
+.user-dashboard-container__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>
