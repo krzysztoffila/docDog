@@ -3,25 +3,28 @@
     <h2 class="text-lg font-semibold mb-4">Your Appointments:</h2>
     <ul>
       <li
-        v-for="(date, index) in dates"
+        v-for="(date, index) in appointments"
         :key="index"
         class="flex items-center mb-2"
       >
         <BadgeElement>
           <template v-if="index === 0" #pending>
-            <div class="badge-info badge mr-4">Pending</div>
+            {{ date.date }}
+            <div class="badge-info badge mr-4">{{ date.status }}</div>
           </template>
           <template v-else-if="index === 1" #visited>
-            <div class="badge-success badge mr-4">Visited</div>
+            {{ date.date }}
+            <div class="badge-success badge mr-4">{{ date.status }}</div>
           </template>
           <template v-else-if="index === 2" #cancelled>
-            <div class="badge-error badge mr-4">Cancelled</div>
+            {{ date.date }}
+            <div class="badge-error badge mr-4">{{ date.status }}</div>
           </template>
           <template v-else #pending>
-            <div class="badge-info badge mr-4">Pending</div>
+            {{ date.date }}
+            <div class="badge-info badge mr-4">{{ date.status }}</div>
           </template>
         </BadgeElement>
-        <p>{{ date }}</p>
       </li>
     </ul>
   </div>
@@ -33,10 +36,8 @@ export default {
   components: {
     BadgeElement,
   },
-  data() {
-    return {
-      dates: ["27.08.2024", "28.09.2024", "29.10.2024", "30.11.2024"],
-    };
+  props: {
+    appointments: Array,
   },
 };
 </script>

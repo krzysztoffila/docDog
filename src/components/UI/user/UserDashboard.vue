@@ -13,14 +13,14 @@
     </div>
     <div class="user-dashboard-container__right w-full md:w-3/5 p-8">
       <div class="mb-8">
-        <PersonalInformation :mail="email" :personalData="fullName" />
+        <PersonalInformation :mail="email" :fullName="personalData" />
       </div>
       <div class="mb-8">
-        <AppointmentList />
+        <AppointmentList :appointments="appointmentData" />
       </div>
       <div>
         <router-link to="/registervisit">
-          <button class="btn btn-primary">Add Appointment</button>
+          <button class="btn btn-info">Add Appointment</button>
         </router-link>
       </div>
     </div>
@@ -41,7 +41,25 @@ export default {
   data() {
     return {
       email: "props@mail.com",
-      fullName: "John Props",
+      personalData: "John Props",
+      appointmentData: [
+        {
+          date: "27.08.2024",
+          status: "Pending",
+        },
+        {
+          date: "28.09.2024",
+          status: "Visited",
+        },
+        {
+          date: "29.10.2024",
+          status: "Cancelled",
+        },
+        {
+          date: "30.11.2024",
+          status: "Pending",
+        },
+      ],
     };
   },
   computed: {
