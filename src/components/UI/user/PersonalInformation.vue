@@ -9,7 +9,7 @@
     />
     <input
       type="text"
-      :value="personalData"
+      :value="fullName"
       class="block input input-bordered"
       disabled
     />
@@ -23,7 +23,7 @@ export default {
       type: String,
       required: true,
     },
-    personalData: {
+    fullName: {
       type: String,
       required: true,
     },
