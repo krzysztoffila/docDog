@@ -9,13 +9,11 @@
       <div class="flex justify-center items-center h-64 mb-8">
         <img :src="userImageUrl" alt="Avatar" class="w-24 rounded-xl" />
       </div>
-      <!-- CALENDAR.JS -->
       <TheCalendar />
-      <!-- <div class="h-64 bg-primary"></div> -->
     </div>
     <div class="user-dashboard-container__right w-full md:w-3/5 p-8">
       <div class="mb-8">
-        <PersonalInformation />
+        <PersonalInformation :mail="email" :personalData="fullName" />
       </div>
       <div class="mb-8">
         <AppointmentList />
@@ -39,6 +37,12 @@ export default {
     PersonalInformation,
     AppointmentList,
     TheCalendar,
+  },
+  data() {
+    return {
+      email: "props@mail.com",
+      fullName: "John Props",
+    };
   },
   computed: {
     userImageUrl() {
