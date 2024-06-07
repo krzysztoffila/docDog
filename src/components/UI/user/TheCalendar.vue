@@ -7,6 +7,8 @@
     active-view="month"
     :disable-views="['week']"
     style="width: 270px; height: 300px"
+    @cell-click="handleCellClick"
+    :selected-date="selectedDate"
   >
   </vue-cal>
 </template>
@@ -21,6 +23,11 @@ export default {
     return {
       selectedDate: null,
     };
+  },
+  methods: {
+    handleCellClick(clickedDate) {
+      this.selectedDate = clickedDate;
+    },
   },
 };
 </script>
