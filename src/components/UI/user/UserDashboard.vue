@@ -13,10 +13,10 @@
     </div>
     <div class="user-dashboard-container__right w-full md:w-3/5 p-8">
       <div class="mb-8">
-        <PersonalInformation :mail-address="email" :full-name="personalData" />
+        <PersonalInformation :email-address="email" :full-name="fullName" />
       </div>
       <div class="mb-8">
-        <AppointmentList :appointments="appointmentData" />
+        <AppointmentList :appointments="appointmentsData" />
       </div>
       <div>
         <router-link to="/registervisit">
@@ -41,8 +41,8 @@ export default {
   data() {
     return {
       email: "props@mail.com",
-      personalData: "John Props",
-      appointmentData: [
+      fullName: "John Props",
+      appointmentsData: [
         {
           date: "27.08.2024",
           status: "Pending",
