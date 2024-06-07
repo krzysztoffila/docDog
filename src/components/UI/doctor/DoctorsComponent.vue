@@ -13,15 +13,13 @@
           :value="doctor.name"
           v-model="selectedDoctor"
           class="mr-2"
+          @change="selectDoctor"
         />
         {{ doctor.name }}
       </label>
     </div>
     <div class="mt-4">
       <p>Selected doctor: {{ selectedDoctor }}</p>
-    </div>
-    <div class="mt-6">
-      <button class="btn btn-info" @click="selectDoctor">Add Visit</button>
     </div>
   </div>
 </template>

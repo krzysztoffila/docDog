@@ -7,13 +7,16 @@
       class="user-dashboard-container flex flex-col items-center md:flex-row md:space-x-8 p-8 shadow-lg rounded-lg w-full max-w-4xl bg-white"
     >
       <div class="user-dashboard-left mb-4 md:mb-0 flex-1 text-blue-800">
-        <TheCalendar />
+        <TheCalendar @select-date="addDate" />
       </div>
       <div class="user-dashboard-right mb-4 md:mb-0 flex-1 text-blue-800">
-        <DoctorsComponent @select-doctor="addVisit" />
+        <DoctorsComponent @select-doctor="addDoctor" />
+      </div>
+      <div class="mt-6">
+        <button class="btn btn-info" @click="addVisit">Add Visit</button>
       </div>
     </div>
-    <p>Wizyta: {{ doctorName }} dnia:</p>
+    <p>Wizyta: {{ doctorName }} dnia: {{ date }}</p>
   </div>
 </template>
 
@@ -26,12 +29,20 @@ export default {
   data() {
     return {
       doctorName: null,
+      date: null,
     };
   },
   methods: {
-    addVisit(doctorName) {
-      this.doctorName = doctorName; // Ustawiamy wartość doctorName na nazwę doktora przekazaną przez emitowane zdarzenie
-      alert(`You added a visit with ${doctorName}.`);
+    addDoctor(doctorName) {
+      this.doctorName = doctorName;
+    },
+    addDate(emitDate) {
+      this.date = emitDate;
+    },
+    addVisit() {
+      confirm(
+        `Do you want to confirm an appointment with ${this.doctorName} on ${this.date}.`
+      );
     },
   },
 };

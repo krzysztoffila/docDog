@@ -1,16 +1,19 @@
 <template>
-  <vue-cal
-    class="vuecal--rounded-theme vuecal--blue-theme"
-    xsmall
-    hide-view-selector
-    :time="false"
-    active-view="month"
-    :disable-views="['week']"
-    style="width: 270px; height: 300px"
-    @cell-click="handleCellClick"
-    :selected-date="selectedDate"
-  >
-  </vue-cal>
+  <div>
+    <vue-cal
+      class="vuecal--rounded-theme vuecal--blue-theme"
+      xsmall
+      hide-view-selector
+      :time="false"
+      active-view="month"
+      :disable-views="['week']"
+      style="width: 270px; height: 300px"
+      @cell-click="handleCellClick"
+      :selected-date="selectedDate"
+    >
+    </vue-cal>
+    <p>Selected date: {{ formattedDate }}</p>
+  </div>
 </template>
 
 <script>
@@ -29,6 +32,10 @@ export default {
     handleCellClick(clickedDate) {
       this.selectedDate = clickedDate;
       this.formattedDate = this.selectedDate.format("DD.MM.YYYY");
+      this.selectDate();
+    },
+    selectDate() {
+      this.$emit("select-date", this.formattedDate);
     },
   },
 };
