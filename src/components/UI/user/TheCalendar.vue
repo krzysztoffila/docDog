@@ -22,11 +22,13 @@ export default {
   data() {
     return {
       selectedDate: null,
+      formattedDate: null,
     };
   },
   methods: {
     handleCellClick(clickedDate) {
       this.selectedDate = clickedDate;
+      this.formattedDate = this.selectedDate.format("DD.MM.YYYY");
     },
   },
 };
