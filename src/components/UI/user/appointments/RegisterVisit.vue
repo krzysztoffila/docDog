@@ -6,15 +6,15 @@
     <div
       class="user-dashboard-container flex flex-col items-center md:flex-row md:space-x-8 p-8 shadow-lg rounded-lg w-full max-w-4xl bg-white"
     >
-      <div class="user-dashboard-left mb-4 md:mb-0 flex-1">
-        <TheCalendar class="text-blue-800" />
+      <div class="user-dashboard-left mb-4 md:mb-0 flex-1 text-blue-800">
+        <TheCalendar />
       </div>
-      <div class="user-dashboard-right mb-4 md:mb-0 flex-1">
-        <DoctorsComponent class="text-blue-800" />
+      <div class="user-dashboard-right mb-4 md:mb-0 flex-1 text-blue-800">
+        <DoctorsComponent />
       </div>
     </div>
     <div class="mt-6">
-      <button class="btn btn-info">Add Visit</button>
+      <button class="btn btn-info" @click="addVisit">Add Visit</button>
     </div>
   </div>
 </template>
@@ -25,6 +25,11 @@ import TheCalendar from "../TheCalendar.vue";
 
 export default {
   components: { TheCalendar, DoctorsComponent },
+  methods: {
+    addVisit() {
+      alert("dodano wizytę");
+    },
+  },
 };
 </script>
 
