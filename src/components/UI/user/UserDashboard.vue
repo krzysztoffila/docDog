@@ -13,7 +13,7 @@
     </div>
     <div class="user-dashboard-container__right w-full md:w-3/5 p-8">
       <div class="mb-8">
-        <PersonalInformation :mail="email" :fullName="personalData" />
+        <PersonalInformation :mail-address="email" :full-name="personalData" />
       </div>
       <div class="mb-8">
         <AppointmentList :appointments="appointmentData" />
@@ -46,12 +46,12 @@ export default {
         {
           date: "27.08.2024",
           status: "Pending",
-          doctor: "oetker",
+          doctor: "dolittle",
         },
         {
           date: "28.09.2024",
           status: "Visited",
-          doctor: "oetker",
+          doctor: "ventura",
         },
         {
           date: "29.10.2024",
