@@ -3,7 +3,7 @@
     <h2 class="text-lg font-semibold mb-4">Personal Information</h2>
     <input
       type="text"
-      :value="mail"
+      :value="mailAddress"
       class="block input input-bordered mb-4"
       disabled
     />
@@ -19,7 +19,7 @@
 <script>
 export default {
   props: {
-    mail: {
+    mailAddress: {
       type: String,
       required: true,
     },
