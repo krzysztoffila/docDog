@@ -13,6 +13,7 @@
         <DoctorsComponent @select-doctor="addVisit" />
       </div>
     </div>
+    <p>Wizyta: {{ doctorName }} dnia:</p>
   </div>
 </template>
 
@@ -22,8 +23,14 @@ import TheCalendar from "../TheCalendar.vue";
 
 export default {
   components: { TheCalendar, DoctorsComponent },
+  data() {
+    return {
+      doctorName: null,
+    };
+  },
   methods: {
     addVisit(doctorName) {
+      this.doctorName = doctorName; // Ustawiamy wartość doctorName na nazwę doktora przekazaną przez emitowane zdarzenie
       alert(`You added a visit with ${doctorName}.`);
     },
   },
