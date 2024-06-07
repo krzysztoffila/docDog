@@ -4,6 +4,7 @@ import HomeView from '@/components/UI/home/HomeView.vue'
 import LoginUser from '@/components/UI/user/login/LoginUser.vue'
 import RegisterUser from '@/components/UI/user/register/RegisterUser.vue'
 import UserDashboard from '@/components/UI/user/UserDashboard.vue'
+import RegisterVisit from '@/components/UI/user/appointments/RegisterVisit.vue'
 
 Vue.use(VueRouter)
 
@@ -34,6 +35,14 @@ const routes = [{
     component: UserDashboard,
     meta: {
         title: 'User Dashboard - docDog'
+    }
+},
+{
+    path: '/registervisit',
+    name: 'registervisit',
+    component: RegisterVisit,
+    meta: {
+        title: 'Register Visit - docDog'
     }
 },
 ]
