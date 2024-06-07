@@ -10,19 +10,19 @@
         <BadgeElement>
           <template v-if="index === 0" #pending>
             <div class="badge-info badge mr-4">{{ appointment.status }}</div>
-            {{ appointment.date }}
+            {{ appointment.date }} - dr.{{ appointment.doctor }}
           </template>
           <template v-else-if="index === 1" #visited>
             <div class="badge-success badge mr-4">{{ appointment.status }}</div>
-            {{ appointment.date }}
+            {{ appointment.date }} - dr.{{ appointment.doctor }}
           </template>
           <template v-else-if="index === 2" #cancelled>
             <div class="badge-error badge mr-4">{{ appointment.status }}</div>
-            {{ appointment.date }}
+            {{ appointment.date }} - dr.{{ appointment.doctor }}
           </template>
           <template v-else #pending>
             <div class="badge-info badge mr-4">{{ appointment.status }}</div>
-            {{ appointment.date }}
+            {{ appointment.date }} - dr.{{ appointment.doctor }}
           </template>
         </BadgeElement>
       </li>

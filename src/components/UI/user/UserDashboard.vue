@@ -46,18 +46,22 @@ export default {
         {
           date: "27.08.2024",
           status: "Pending",
+          doctor: "oetker",
         },
         {
           date: "28.09.2024",
           status: "Visited",
+          doctor: "oetker",
         },
         {
           date: "29.10.2024",
           status: "Cancelled",
+          doctor: "oetker",
         },
         {
           date: "30.11.2024",
           status: "Pending",
+          doctor: "oetker",
         },
       ],
     };
