@@ -10,11 +10,8 @@
         <TheCalendar />
       </div>
       <div class="user-dashboard-right mb-4 md:mb-0 flex-1 text-blue-800">
-        <DoctorsComponent />
+        <DoctorsComponent @select-doctor="addVisit" />
       </div>
-    </div>
-    <div class="mt-6">
-      <button class="btn btn-info" @click="addVisit">Add Visit</button>
     </div>
   </div>
 </template>
@@ -26,8 +23,8 @@ import TheCalendar from "../TheCalendar.vue";
 export default {
   components: { TheCalendar, DoctorsComponent },
   methods: {
-    addVisit() {
-      alert("dodano wizytę");
+    addVisit(doctorName) {
+      alert(`You added a visit with ${doctorName}.`);
     },
   },
 };
