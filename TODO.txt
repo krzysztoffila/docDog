@@ -2,9 +2,7 @@
 ----TODO----
 ------------
 
----COMPONENTS---
-[TODO][COMPONENT] Utworzyc komponent lekarzy + zdjęcia
-[TODO][COMPONENT] Zaimplementowac calendar.js i dołączyć do widoku usera(wybrać UI kalendarz)
+
 
 ---MAIN STRUCTURE---
 [TODO] Porobić base buttony dla docDog 
@@ -14,21 +12,19 @@
         -> KALENDARZ + LEKARZ 
         -> POTWIERDZ WIZYTĘ(PROPS Z KALENDARZ[COMPONENT] + LEKARZ[COMPONENT]) 
         -> WYPLUWA NAM DO LIST WIZYT NA PENDING(EMIT DO USER PROFILE)
-
 ---REGISTER---
-[TODO] Wybrać bazę danych firebase/node.js
 [TODO] ENV PROCESS dla endpointow:
        - zainstalować env
        - porobić zmienne ze sciezkami
        - porobić testy 
-
 ---LOGIN---
 [TODO] Logowanie uzytkownika: 
         - cookies,
-        - pobranie usera z firebase/node.js
+        - pobranie usera z bazy danych
         - zmiana login/logout
 
 ---USER PROFILE---
+---COMPONENTS---
 ------------
 ----DONE----
 ------------
@@ -41,3 +37,6 @@
         - RWD
 [DONE] Zrobić slot z badge
 [DONE] Poprawić link do awatara
+[DONE][COMPONENT] Utworzyc komponent lekarzy
+[DONE][COMPONENT] Zaimplementowac calendar.js i dołączyć do widoku usera(wybrać UI kalendarz)
+[DONE] Wybrać bazę danych (FIREBASE)

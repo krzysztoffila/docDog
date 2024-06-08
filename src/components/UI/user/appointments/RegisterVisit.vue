@@ -11,9 +11,9 @@
       </div>
       <div class="user-dashboard-right mb-4 md:mb-0 flex-1 text-blue-800">
         <DoctorsComponent @select-doctor="addDoctor" />
-      </div>
-      <div class="mt-6">
-        <button class="btn btn-info" @click="addVisit">Add Visit</button>
+        <div class="mt-6">
+          <button class="btn btn-info" @click="addVisit">Add Visit</button>
+        </div>
       </div>
     </div>
     <p>Wizyta: {{ doctorName }} dnia: {{ date }}</p>
@@ -41,7 +41,7 @@ export default {
     },
     addVisit() {
       confirm(
-        `Do you want to confirm an appointment with ${this.doctorName} on ${this.date}.`
+        `Do you want to confirm an appointment with ${this.doctorName} on ${this.date} ?`
       );
     },
   },
