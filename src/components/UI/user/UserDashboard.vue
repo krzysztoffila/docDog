@@ -20,7 +20,7 @@
       </div>
       <div>
         <router-link to="/registervisit">
-          <button class="btn btn-info">Add Appointment</button>
+          <button class="btn btn-info text-white">Add Appointment</button>
         </router-link>
       </div>
     </div>

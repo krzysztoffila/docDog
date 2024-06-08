@@ -4,15 +4,17 @@
   >
     <h2 class="text-3xl font-bold mb-8 text-blue-800">REGISTER VISIT</h2>
     <div
-      class="user-dashboard-container flex flex-col items-center md:flex-row md:space-x-8 p-8 shadow-lg rounded-lg w-full max-w-4xl bg-white"
+      class="user-dashboard-container flex flex-col items-center md:flex-row md:space-x-8 p-8 shadow-lg rounded-lg w-full max-w-4xl bg-white text-blue-800"
     >
-      <div class="user-dashboard-left mb-4 md:mb-0 flex-1 text-blue-800">
+      <div class="user-dashboard-left mb-4 md:mb-0 flex-1">
         <TheCalendar @select-date="addDate" />
       </div>
-      <div class="user-dashboard-right mb-4 md:mb-0 flex-1 text-blue-800">
+      <div class="user-dashboard-right mb-4 md:mb-0 flex-1">
         <DoctorsComponent @select-doctor="addDoctor" />
         <div class="mt-6">
-          <button class="btn btn-info" @click="addVisit">Add Visit</button>
+          <button class="btn btn-info text-white" @click="addVisit">
+            Add Visit
+          </button>
         </div>
       </div>
     </div>
