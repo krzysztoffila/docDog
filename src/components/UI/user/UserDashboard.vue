@@ -31,7 +31,7 @@
 import PersonalInformation from "./PersonalInformation.vue";
 import AppointmentList from "./appointments/AppointmentList.vue";
 import TheCalendar from "./TheCalendar.vue";
-
+import { EventBus } from "@/event-bus";
 export default {
   components: {
     PersonalInformation,
@@ -40,6 +40,8 @@ export default {
   },
   data() {
     return {
+      userImageUrl:
+        "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg",
       email: "props@mail.com",
       fullName: "John Props",
       appointmentsData: [
@@ -66,10 +68,17 @@ export default {
       ],
     };
   },
-  computed: {
-    userImageUrl() {
-      return "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg";
+  created() {
+    EventBus.$on("add-visit", this.addVisit);
+  },
+  methods: {
+    addVisit(visit) {
+      this.appointmentsData.push(visit);
+      console.log("appointment added", JSON.stringify(visit));
     },
+  },
+  beforeDestroy() {
+    EventBus.$off("add-visit", this.addVisit);
   },
 };
 </script>
