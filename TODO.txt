@@ -4,8 +4,6 @@ ENDPOINT: https://doc-dog-42e1c-default-rtdb.firebaseio.com/[ENDPOINT].json
 ----TODO----
 ------------
 ---MAIN STRUCTURE---
-[TODO] Porobić base buttony dla docDog 
-       - czy potrzeba ?
 [TODO] DODAĆ PRZEJSCIE DO ADD APPIONTMENT 
         [OK]-> KALENDARZ + LEKARZ 
         [OK]-> POTWIERDZ WIZYTĘ(PROPS Z KALENDARZ[COMPONENT] + LEKARZ[COMPONENT]) 
@@ -38,3 +36,4 @@ ENDPOINT: https://doc-dog-42e1c-default-rtdb.firebaseio.com/[ENDPOINT].json
 [DONE][COMPONENT] Zaimplementowac calendar.js i dołączyć do widoku usera(wybrać UI kalendarz)
 [DONE] Wybrać bazę danych (FIREBASE)
 [DONE][DESTRUKTURYZACJA] Rozbic na mniejsze komponenty to co się da
+[----] Porobić base buttony dla docDog - czy potrzeba ? [nie]
