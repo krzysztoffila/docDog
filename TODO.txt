@@ -1,16 +1,14 @@
+---DATABASE---
+ENDPOINT: https://doc-dog-42e1c-default-rtdb.firebaseio.com/[ENDPOINT].json
 ------------
 ----TODO----
 ------------
-
-
-
 ---MAIN STRUCTURE---
 [TODO] Porobić base buttony dla docDog 
        - czy potrzeba ?
-[TODO][DESTRUKTURYZACJA] Rozbic na mniejsze komponenty to co się da
 [TODO] DODAĆ PRZEJSCIE DO ADD APPIONTMENT 
-        -> KALENDARZ + LEKARZ 
-        -> POTWIERDZ WIZYTĘ(PROPS Z KALENDARZ[COMPONENT] + LEKARZ[COMPONENT]) 
+        [OK]-> KALENDARZ + LEKARZ 
+        [OK]-> POTWIERDZ WIZYTĘ(PROPS Z KALENDARZ[COMPONENT] + LEKARZ[COMPONENT]) 
         -> WYPLUWA NAM DO LIST WIZYT NA PENDING(EMIT DO USER PROFILE)
 ---REGISTER---
 [TODO] ENV PROCESS dla endpointow:
@@ -22,7 +20,6 @@
         - cookies,
         - pobranie usera z bazy danych
         - zmiana login/logout
-
 ---USER PROFILE---
 ---COMPONENTS---
 ------------
@@ -40,3 +37,4 @@
 [DONE][COMPONENT] Utworzyc komponent lekarzy
 [DONE][COMPONENT] Zaimplementowac calendar.js i dołączyć do widoku usera(wybrać UI kalendarz)
 [DONE] Wybrać bazę danych (FIREBASE)
+[DONE][DESTRUKTURYZACJA] Rozbic na mniejsze komponenty to co się da
