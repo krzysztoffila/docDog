@@ -55,9 +55,9 @@
 
         <router-link to="/login">
           Already have an account?
-          <span class="text-blue-600 hover:text-blue-800 hover:underline"
-            >Login
-          </span>
+          <button class="text-blue-600 hover:text-blue-800 hover:underline">
+            Login
+          </button>
         </router-link>
       </form>
     </div>
