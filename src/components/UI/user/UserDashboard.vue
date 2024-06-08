@@ -46,22 +46,22 @@ export default {
         {
           date: "27.08.2024",
           status: "Pending",
-          doctor: "dolittle",
+          doctor: "Dr.Dolittle",
         },
         {
           date: "28.09.2024",
           status: "Visited",
-          doctor: "ventura",
+          doctor: "Dr.Ventura",
         },
         {
           date: "29.10.2024",
           status: "Cancelled",
-          doctor: "oetker",
+          doctor: "Dr.Oetker",
         },
         {
           date: "30.11.2024",
           status: "Pending",
-          doctor: "oetker",
+          doctor: "Dr.Oetker",
         },
       ],
     };
