@@ -30,18 +30,9 @@ export default {
     return {
       selectedDoctor: null,
       doctors: [
-        {
-          doctorId: 0,
-          name: "Dr. Dolittle",
-        },
-        {
-          doctorId: 1,
-          name: "Dr. Ventura",
-        },
-        {
-          doctorId: 2,
-          name: "Dr. Oetker",
-        },
+        { doctorId: 0, name: "Dr. Dolittle" },
+        { doctorId: 1, name: "Dr. Ventura" },
+        { doctorId: 2, name: "Dr. Oetker" },
       ],
     };
   },
