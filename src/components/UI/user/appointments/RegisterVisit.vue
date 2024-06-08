@@ -25,6 +25,7 @@
 <script>
 import DoctorsComponent from "../../doctor/DoctorsComponent.vue";
 import TheCalendar from "../TheCalendar.vue";
+import { EventBus } from "@/event-bus.js";
 
 export default {
   components: { TheCalendar, DoctorsComponent },
@@ -42,9 +43,20 @@ export default {
       this.date = emitDate;
     },
     addVisit() {
-      confirm(
-        `Do you want to confirm an appointment with ${this.doctorName} on ${this.date} ?`
-      );
+      console.log("Metoda addVisit została wywołana");
+      if (
+        confirm(
+          `Do you want to confirm an appointment with ${this.doctorName} on ${this.date} ?`
+        )
+      ) {
+        const appointment = {
+          doctor: this.doctorName,
+          date: this.date,
+          status: "Pending",
+        };
+        EventBus.$emit("add-visit", appointment);
+        this.$router.push("/dashboard");
+      }
     },
   },
 };
