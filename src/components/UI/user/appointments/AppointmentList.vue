@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import BadgeElement from "@/components/layout/BadgeElement.vue";
+import BadgeElement from "@/components/layout/BaseBadge.vue";
 export default {
   components: {
     BadgeElement,
