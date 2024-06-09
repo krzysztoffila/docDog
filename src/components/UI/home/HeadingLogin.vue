@@ -33,14 +33,16 @@
         </label>
       </div>
       <div class="form-control mt-6">
-        <button class="btn btn-primary">Login</button>
+        <base-button class="btn-primary btn-block">Login</base-button>
       </div>
     </form>
   </div>
 </template>
 
 <script>
+import BaseButton from "@/components/layout/BaseButton.vue";
 export default {
+  components: { BaseButton },
   data() {
     return {
       email: "",

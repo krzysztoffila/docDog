@@ -20,7 +20,7 @@
       </div>
       <div>
         <router-link to="/registervisit">
-          <button class="btn btn-info text-white">Add Appointment</button>
+          <base-button class="btn-info">Add Appointment </base-button>
         </router-link>
       </div>
     </div>
@@ -31,9 +31,11 @@
 import PersonalInformation from "./PersonalInformation.vue";
 import AppointmentList from "./appointments/AppointmentList.vue";
 import TheCalendar from "./TheCalendar.vue";
+import BaseButton from "@/components/layout/BaseButton.vue";
 
 export default {
   components: {
+    BaseButton,
     PersonalInformation,
     AppointmentList,
     TheCalendar,
