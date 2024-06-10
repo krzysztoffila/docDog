@@ -36,10 +36,9 @@ export default {
   components: {
     BadgeElement,
   },
-  props: {
-    appointments: {
-      type: Array,
-      required: true,
+  computed: {
+    appointments() {
+      return this.$store.state.appointmentsData;
     },
   },
 };
