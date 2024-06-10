@@ -38,7 +38,7 @@ export default {
   },
   computed: {
     appointments() {
-      return this.$store.state.appointmentsData;
+      return this.$store.state.user.appointmentsData;
     },
   },
 };

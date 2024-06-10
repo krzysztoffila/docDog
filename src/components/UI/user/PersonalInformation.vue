@@ -20,10 +20,10 @@
 export default {
   computed: {
     fullName() {
-      return this.$store.state.fullName;
+      return this.$store.state.user.fullName;
     },
     emailAddress() {
-      return this.$store.state.email;
+      return this.$store.state.user.email;
     },
   },
 };
