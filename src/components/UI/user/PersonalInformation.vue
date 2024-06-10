@@ -18,14 +18,12 @@
 
 <script>
 export default {
-  props: {
-    emailAddress: {
-      type: String,
-      required: true,
+  computed: {
+    fullName() {
+      return this.$store.state.fullName;
     },
-    fullName: {
-      type: String,
-      required: true,
+    emailAddress() {
+      return this.$store.state.email;
     },
   },
 };

@@ -13,10 +13,10 @@
     </div>
     <div class="user-dashboard-container__right w-full md:w-3/5 p-8">
       <div class="mb-8">
-        <PersonalInformation :email-address="email" :full-name="fullName" />
+        <PersonalInformation />
       </div>
       <div class="mb-8">
-        <AppointmentList :appointments="appointmentsData" />
+        <AppointmentList />
       </div>
       <div>
         <router-link to="/registervisit">
@@ -41,32 +41,7 @@ export default {
     TheCalendar,
   },
   data() {
-    return {
-      email: "props@mail.com",
-      fullName: "John Props",
-      appointmentsData: [
-        {
-          date: "27.08.2024",
-          status: "Pending",
-          doctor: "Dr.Dolittle",
-        },
-        {
-          date: "28.09.2024",
-          status: "Visited",
-          doctor: "Dr.Ventura",
-        },
-        {
-          date: "29.10.2024",
-          status: "Cancelled",
-          doctor: "Dr.Oetker",
-        },
-        {
-          date: "30.11.2024",
-          status: "Pending",
-          doctor: "Dr.Oetker",
-        },
-      ],
-    };
+    return {};
   },
   computed: {
     userImageUrl() {
