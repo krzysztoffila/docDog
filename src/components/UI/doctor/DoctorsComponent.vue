@@ -26,24 +26,10 @@
 
 <script>
 export default {
-  data() {
-    return {
-      selectedDoctor: null,
-      doctors: [
-        {
-          doctorId: 0,
-          name: "Dr. Dolittle",
-        },
-        {
-          doctorId: 1,
-          name: "Dr. Ventura",
-        },
-        {
-          doctorId: 2,
-          name: "Dr. Oetker",
-        },
-      ],
-    };
+  computed: {
+    doctors() {
+      return this.$store.state.doctors;
+    },
   },
   methods: {
     selectDoctor() {
