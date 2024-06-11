@@ -4,7 +4,7 @@
     data-theme="light"
   >
     <div
-      class="user-dashboard-container__left w-full md:w-2/5 mb-8 md:mb-0 md:mr-8 p-8"
+      class="user-dashboard-container__left flex flex-col items-center w-full md:w-2/5 mb-8 md:mb-0 md:mr-8 p-8"
     >
       <div class="flex justify-center items-center h-64 mb-8">
         <img :src="userImageUrl" alt="Avatar" class="w-24 rounded-xl" />
@@ -40,9 +40,6 @@ export default {
     AppointmentList,
     TheCalendar,
   },
-  data() {
-    return {};
-  },
   computed: {
     userImageUrl() {
       return "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg";
@@ -52,9 +49,4 @@ export default {
 </script>
 
 <style scoped>
-.user-dashboard-container__left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 </style>

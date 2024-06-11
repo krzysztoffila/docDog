@@ -6,7 +6,6 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     userIsLogged: true,
-    selectedDoctor: null,
     user: {
       email: "j.store@mail.com",
       fullName: "John Store",
@@ -33,20 +32,23 @@ export default new Vuex.Store({
         },
       ],
     },
-    doctors: [
-      {
-        doctorId: 0,
-        name: "Dr. Dolittle",
-      },
-      {
-        doctorId: 1,
-        name: "Dr. Ventura",
-      },
-      {
-        doctorId: 2,
-        name: "Dr. Oetker",
-      },
-    ],
+    doctors: {
+      selectedDoctor: null,
+      doctors: [
+        {
+          doctorId: 0,
+          name: "Dr. Dolittle",
+        },
+        {
+          doctorId: 1,
+          name: "Dr. Ventura",
+        },
+        {
+          doctorId: 2,
+          name: "Dr. Oetker",
+        },
+      ],
+    },
   },
   getters: {
   },

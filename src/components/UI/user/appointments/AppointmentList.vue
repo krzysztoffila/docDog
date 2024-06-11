@@ -10,20 +10,21 @@
         <BadgeElement>
           <template v-if="index === 0" #pending>
             <div class="badge-info badge mr-4">{{ appointment.status }}</div>
-            {{ appointment.date }} - {{ appointment.doctor }}
+            {{ appointment.date }} - {{ doctors[0].name }}
           </template>
           <template v-else-if="index === 1" #visited>
             <div class="badge-success badge mr-4">{{ appointment.status }}</div>
-            {{ appointment.date }} - {{ appointment.doctor }}
+            {{ appointment.date }} - {{ doctors[1].name }}
           </template>
           <template v-else-if="index === 2" #cancelled>
             <div class="badge-error badge mr-4">{{ appointment.status }}</div>
-            {{ appointment.date }} - {{ appointment.doctor }}
+            {{ appointment.date }} - {{ doctors[2].name }}
           </template>
           <template v-else #pending>
             <div class="badge-info badge mr-4">{{ appointment.status }}</div>
-            {{ appointment.date }} - {{ appointment.doctor }}
+            {{ appointment.date }} - {{ doctors[0].name }}
           </template>
+          {{ doctors }}
         </BadgeElement>
       </li>
     </ul>
@@ -39,6 +40,9 @@ export default {
   computed: {
     appointments() {
       return this.$store.state.user.appointmentsData;
+    },
+    doctors() {
+      return this.$store.state.doctors.doctors;
     },
   },
 };
