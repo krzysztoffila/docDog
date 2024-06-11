@@ -26,9 +26,14 @@
 
 <script>
 export default {
+  data() {
+    return {
+      selectedDoctor: null,
+    };
+  },
   computed: {
     doctors() {
-      return this.$store.state.doctors.doctors;
+      return this.$store.state.doctors;
     },
     selectedDoctor() {
       return this.$store.state.doctors.selectedDoctor;
