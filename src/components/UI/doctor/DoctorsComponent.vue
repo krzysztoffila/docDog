@@ -28,7 +28,10 @@
 export default {
   computed: {
     doctors() {
-      return this.$store.state.doctors;
+      return this.$store.state.doctors.doctors;
+    },
+    selectedDoctor() {
+      return this.$store.state.doctors.selectedDoctor;
     },
   },
   methods: {
