@@ -3,6 +3,8 @@ ENDPOINT: https://doc-dog-42e1c-default-rtdb.firebaseio.com/[ENDPOINT].json
 ------------
 ----TODO----
 ------------
+---REGISTER VISIT---
+[TODO] Przycisk back/cancel który robi powrót do dashboardu: 
 ---MAIN STRUCTURE---
 [TODO] DODAĆ PRZEJSCIE DO ADD APPIONTMENT 
         [OK]-> KALENDARZ + LEKARZ 
