@@ -1,14 +1,12 @@
 <template>
   <div>
-    <slot name="pending" v-if="$slots.pending">
-      <div :class="badgesClass[0]" class="badge mr-4">{{ badgesNames[0] }}</div>
-    </slot>
-    <slot name="visited" v-if="$slots.visited">
-      <div :class="badgesClass[1]" class="badge mr-4">{{ badgesNames[1] }}</div>
-    </slot>
-    <slot name="cancelled" v-if="$slots.cancelled">
-      <div :class="badgesClass[2]" class="badge mr-4">{{ badgesNames[2] }}</div>
-    </slot>
+    <template v-for="(badge, name) in badgeData">
+      <div :key="name" v-if="$slots[name]">
+        <slot :name="name">
+          <div :class="[badge.class, 'badge', 'mr-4']">{{ badge.name }}</div>
+        </slot>
+      </div>
+    </template>
   </div>
 </template>
 
@@ -16,13 +14,25 @@
 export default {
   data() {
     return {
-      badgesNames: ["Pending", "Visited", "Cancelled"],
+      badgeData: {
+        pending: {
+          name: "Pending",
+          class: "badge-info",
+        },
+        visited: {
+          name: "Visited",
+          class: "badge-success",
+        },
+        cancelled: {
+          name: "Cancelled",
+          class: "badge-error",
+        },
+      },
     };
-  },
-  computed: {
-    badgesClass() {
-      return ["badge-info", "badge-success", "badge-error"];
-    },
   },
 };
 </script>
+
+<style>
+/* Dodaj odpowiednie style, jeśli to konieczne */
+</style>
