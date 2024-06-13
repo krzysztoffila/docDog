@@ -3,13 +3,13 @@ ENDPOINT: https://doc-dog-42e1c-default-rtdb.firebaseio.com/[ENDPOINT].json
 ------------
 ----TODO----
 ------------
+[TODO] Computed property "selectedDoctor" was assigned to but it has no setter.
 ---REGISTER VISIT---
-[TODO] Przycisk back/cancel który robi powrót do dashboardu: 
 ---MAIN STRUCTURE---
 [TODO] DODAĆ PRZEJSCIE DO ADD APPIONTMENT 
         [OK]-> KALENDARZ + LEKARZ 
         [OK]-> POTWIERDZ WIZYTĘ(PROPS Z KALENDARZ[COMPONENT] + LEKARZ[COMPONENT]) 
-        -> WYPLUWA NAM DO LIST WIZYT NA PENDING(EMIT DO USER PROFILE)
+        [TODO]-> WYPLUWA NAM DO LIST WIZYT NA PENDING(EMIT DO USER PROFILE)
 ---REGISTER---
 [TODO] ENV PROCESS dla endpointow:
        - zainstalować env
@@ -39,3 +39,4 @@ ENDPOINT: https://doc-dog-42e1c-default-rtdb.firebaseio.com/[ENDPOINT].json
 [DONE] Wybrać bazę danych (FIREBASE)
 [DONE][DESTRUKTURYZACJA] Rozbic na mniejsze komponenty to co się da
 [----] Porobić base buttony dla docDog - czy potrzeba ? [nie]
+[DONE] Przycisk back/cancel który robi powrót do dashboardu: 
