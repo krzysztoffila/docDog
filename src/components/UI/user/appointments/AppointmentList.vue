@@ -8,23 +8,22 @@
         class="flex items-center mb-2"
       >
         <BadgeElement>
-          <template v-if="index === 0" #pending>
+          <template v-if="appointment.status === 'Pending'" #pending>
             <div class="badge-info badge mr-4">{{ appointment.status }}</div>
-            {{ appointment.date }} - {{ doctors[0].name }}
+            {{ appointment.date }} - {{ appointment.doctor }}
           </template>
-          <template v-else-if="index === 1" #visited>
+          <template v-else-if="appointment.status === 'Visited'" #visited>
             <div class="badge-success badge mr-4">{{ appointment.status }}</div>
-            {{ appointment.date }} - {{ doctors[1].name }}
+            {{ appointment.date }} - {{ appointment.doctor }}
           </template>
-          <template v-else-if="index === 2" #cancelled>
+          <template v-else-if="appointment.status === 'Cancelled'" #cancelled>
             <div class="badge-error badge mr-4">{{ appointment.status }}</div>
-            {{ appointment.date }} - {{ doctors[2].name }}
+            {{ appointment.date }} - {{ appointment.doctor }}
           </template>
           <template v-else #pending>
             <div class="badge-info badge mr-4">{{ appointment.status }}</div>
-            {{ appointment.date }} - {{ doctors[0].name }}
+            {{ appointment.date }} - {{ appointment.doctor }}
           </template>
-          {{ doctors }}
         </BadgeElement>
       </li>
     </ul>
@@ -33,6 +32,7 @@
 
 <script>
 import BadgeElement from "@/components/layout/BaseBadge.vue";
+
 export default {
   components: {
     BadgeElement,
@@ -41,9 +41,9 @@ export default {
     appointments() {
       return this.$store.state.user.appointmentsData;
     },
-    doctors() {
-      return this.$store.state.doctors.doctors;
-    },
   },
 };
 </script>
+
+<style>
+</style>
