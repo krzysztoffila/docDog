@@ -26,17 +26,17 @@
 
 <script>
 export default {
-  data() {
-    return {
-      selectedDoctor: null,
-    };
-  },
   computed: {
     doctors() {
       return this.$store.state.doctors;
     },
-    selectedDoctor() {
-      return this.$store.state.doctors.selectedDoctor;
+    selectedDoctor: {
+      get() {
+        return this.$store.state.selectedDoctor;
+      },
+      set(value) {
+        this.$store.commit("setSelectedDoctor", value);
+      },
     },
   },
   methods: {
@@ -46,6 +46,7 @@ export default {
   },
 };
 </script>
+
 
 <style>
 </style>

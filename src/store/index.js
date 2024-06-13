@@ -51,6 +51,9 @@ export default new Vuex.Store({
   getters: {
   },
   mutations: {
+    setSelectedDoctor(state, doctor) {
+      state.selectedDoctor = doctor;
+    }
   },
   actions: {
   },

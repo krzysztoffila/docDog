@@ -3,8 +3,9 @@ ENDPOINT: https://doc-dog-42e1c-default-rtdb.firebaseio.com/[ENDPOINT].json
 ------------
 ----TODO----
 ------------
-[TODO] Computed property "selectedDoctor" was assigned to but it has no setter.
+[TOOD] Zamienic domyslne okienka na modale
 ---REGISTER VISIT---
+[TODO] Po domyslnej rejestracji wizyty widok toast z powiadomieniem
 ---MAIN STRUCTURE---
 [TODO] DODAĆ PRZEJSCIE DO ADD APPIONTMENT 
         [OK]-> KALENDARZ + LEKARZ 
@@ -39,4 +40,5 @@ ENDPOINT: https://doc-dog-42e1c-default-rtdb.firebaseio.com/[ENDPOINT].json
 [DONE] Wybrać bazę danych (FIREBASE)
 [DONE][DESTRUKTURYZACJA] Rozbic na mniejsze komponenty to co się da
 [----] Porobić base buttony dla docDog - czy potrzeba ? [nie]
-[DONE] Przycisk back/cancel który robi powrót do dashboardu: 
+[DONE] Przycisk back/cancel który robi powrót do dashboardu.
+[DONE] Computed property "selectedDoctor" was assigned to but it has no setter.
