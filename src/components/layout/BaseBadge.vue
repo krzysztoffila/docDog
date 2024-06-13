@@ -34,5 +34,4 @@ export default {
 </script>
 
 <style>
-/* Dodaj odpowiednie style, jeśli to konieczne */
 </style>
