@@ -12,6 +12,12 @@
       <div class="user-dashboard-right mb-4 md:mb-0 flex-1">
         <DoctorsComponent @select-doctor="addDoctor" />
         <div class="mt-6">
+          <button
+            class="btn btn-warning text-white mr-3"
+            @click="backToDashboard"
+          >
+            Back to dashboard
+          </button>
           <button class="btn btn-info text-white" @click="addVisit">
             Add Visit
           </button>
@@ -45,6 +51,13 @@ export default {
       confirm(
         `Do you want to confirm an appointment with ${this.doctorName} on ${this.date} ?`
       );
+    },
+    backToDashboard() {
+      if (confirm(`Are you sure you want to cancel your appointment ?`)) {
+        this.doctorName = null;
+        this.date = null;
+        this.$router.push("/dashboard");
+      }
     },
   },
 };
