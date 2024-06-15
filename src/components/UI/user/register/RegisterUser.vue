@@ -1,13 +1,13 @@
 <template>
   <div
     data-theme="light"
-    class="relative flex flex-col justify-center h-screen overflow-hidden"
+    class="relative flex flex-col justify-center h-screen overflow-hidden bg-blue-500"
   >
     <div
-      class="w-full p-6 m-auto bg-white rounded-md shadow-md ring-2 ring-gray-800/50 lg:max-w-xl"
+      class="w-full p-6 m-auto bg-blue-400 rounded-md shadow-md ring-2 ring-gray-800/50 lg:max-w-xl"
     >
       <h1 class="text-3xl font-semibold text-center text-gray-700">Register</h1>
-      <form @submit.prevent="registerUser" class="space-y-4">
+      <form @submit.prevent="registerUser" class="space-y-4 bg-blue-400">
         <div>
           <label class="label">
             <span class="text-base label-text">Email</span>
@@ -16,7 +16,7 @@
             v-model.trim="email"
             type="text"
             placeholder="Email Address"
-            class="w-full input input-bordered"
+            class="w-full input input-bordered bg-blue-100"
           />
           <p class="text-red-800" v-if="emailValidity === 'invalid'">
             Please enter a valid email address
@@ -30,7 +30,7 @@
             v-model="password"
             type="password"
             placeholder="Enter Password"
-            class="w-full input input-bordered"
+            class="w-full input input-bordered bg-blue-100"
           />
         </div>
         <div>
@@ -41,7 +41,7 @@
             v-model="confirmPassword"
             type="password"
             placeholder="Confirm Password"
-            class="w-full input input-bordered"
+            class="w-full input input-bordered bg-blue-100"
           />
         </div>
         <div style="height: 20px">
@@ -55,7 +55,7 @@
 
         <router-link to="/login">
           Already have an account?
-          <button class="text-blue-600 hover:text-blue-800 hover:underline">
+          <button class="hover:text-blue-800 hover:underline text-white">
             Login
           </button>
         </router-link>
