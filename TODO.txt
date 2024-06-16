@@ -3,7 +3,7 @@ ENDPOINT: https://doc-dog-42e1c-default-rtdb.firebaseio.com/[ENDPOINT].json
 ------------
 ----TODO----
 ------------
-[TOOD] Zamienic domyslne okienka na modale
+[TODO] Zamienic domyslne okienka na modale
 ---REGISTER VISIT---
 [TODO] Po domyslnej rejestracji wizyty widok toast z powiadomieniem
 ---MAIN STRUCTURE---

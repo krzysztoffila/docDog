@@ -25,15 +25,18 @@
       </div>
     </div>
     <p>Wizyta: {{ doctorName }} dnia: {{ date }}</p>
+    <BaseModal />
   </div>
 </template>
 
 <script>
 import DoctorsComponent from "../../doctor/DoctorsComponent.vue";
 import TheCalendar from "../TheCalendar.vue";
+import BaseModal from "@/components/layout/BaseModal.vue";
+import { mapActions } from "vuex";
 
 export default {
-  components: { TheCalendar, DoctorsComponent },
+  components: { TheCalendar, DoctorsComponent, BaseModal },
   data() {
     return {
       doctorName: null,
@@ -41,6 +44,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(["showModal"]),
     addDoctor(doctorName) {
       this.doctorName = doctorName;
     },
@@ -48,20 +52,22 @@ export default {
       this.date = emitDate;
     },
     addVisit() {
-      confirm(
-        `Do you want to confirm an appointment with ${this.doctorName} on ${this.date} ?`
-      );
+      this.showModal({
+        message: `Do you want to confirm an appointment with ${this.doctorName} on ${this.date} ?`,
+        callback: this.confirmVisit,
+      });
     },
     backToDashboard() {
-      if (confirm(`Are you sure you want to cancel your appointment ?`)) {
-        this.doctorName = null;
-        this.date = null;
-        this.$router.push("/dashboard");
-      }
+      this.showModal({
+        message: `Are you sure you want to cancel your appointment ?`,
+        callback: this.cancelAppointment,
+      });
+    },
+    cancelAppointment() {
+      this.doctorName = null;
+      this.date = null;
+      this.$router.push("/dashboard");
     },
   },
 };
 </script>
-
-<style>
-</style>
