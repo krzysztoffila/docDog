@@ -12,7 +12,6 @@ ENDPOINT: https://doc-dog-42e1c-default-rtdb.firebaseio.com/[ENDPOINT].json
         [OK]-> POTWIERDZ WIZYTĘ(PROPS Z KALENDARZ[COMPONENT] + LEKARZ[COMPONENT]) 
         [TODO]-> WYPLUWA NAM DO LIST WIZYT NA PENDING(EMIT DO USER PROFILE)
 ---REGISTER---
-[TODO] Walidacja hasła
 [TODO] ENV PROCESS dla endpointow:
        - zainstalować env
        - porobić zmienne ze sciezkami
@@ -44,3 +43,4 @@ ENDPOINT: https://doc-dog-42e1c-default-rtdb.firebaseio.com/[ENDPOINT].json
 [DONE] Przycisk back/cancel który robi powrót do dashboardu.
 [DONE] Computed property "selectedDoctor" was assigned to but it has no setter.
 [DONE] Walidacja maila
+[DONE] Walidacja hasła

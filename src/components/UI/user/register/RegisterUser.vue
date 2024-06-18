@@ -29,10 +29,15 @@
           </label>
           <input
             v-model="password"
+            @input="validatePassword"
             type="password"
             placeholder="Enter Password"
             class="w-full input input-bordered bg-blue-100"
           />
+          <p class="text-red-800" v-if="passwordValidity === 'invalid'">
+            Password must be at least 8 characters long and include letters,
+            numbers, and special characters
+          </p>
         </div>
         <div>
           <label class="label">
@@ -75,6 +80,7 @@ export default {
       password: "",
       confirmPassword: "",
       emailValidity: "pending",
+      passwordValidity: "pending",
     };
   },
   computed: {
@@ -83,7 +89,9 @@ export default {
         this.email === "" ||
         this.password !== this.confirmPassword ||
         this.password === "" ||
-        this.confirmPassword === ""
+        this.confirmPassword === "" ||
+        this.emailValidity === "invalid" ||
+        this.passwordValidity === "invalid"
       ) {
         return "btn-disabled";
       } else {
@@ -93,8 +101,11 @@ export default {
   },
   methods: {
     async registerUser() {
-      if (this.emailValidity === "invalid") {
-        alert("Please enter a valid email address.");
+      if (
+        this.emailValidity === "invalid" ||
+        this.passwordValidity === "invalid"
+      ) {
+        alert("Please fix the errors in the form.");
         return;
       }
 
@@ -125,6 +136,16 @@ export default {
         this.emailValidity = "valid";
       } else {
         this.emailValidity = "invalid";
+      }
+    },
+
+    validatePassword() {
+      const passwordFormat =
+        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+      if (passwordFormat.test(this.password)) {
+        this.passwordValidity = "valid";
+      } else {
+        this.passwordValidity = "invalid";
       }
     },
   },
