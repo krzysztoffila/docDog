@@ -14,6 +14,7 @@
           </label>
           <input
             v-model.trim="email"
+            @input="validateEmail"
             type="text"
             placeholder="Email Address"
             class="w-full input input-bordered bg-blue-100"
@@ -92,6 +93,11 @@ export default {
   },
   methods: {
     async registerUser() {
+      if (this.emailValidity === "invalid") {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
       try {
         const response = await axios.post(
           "https://doc-dog-42e1c-default-rtdb.firebaseio.com/users.json",
@@ -113,14 +119,12 @@ export default {
       }
     },
 
-    validateEmail(emailInput) {
-      const mailformat =
-        /^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$/;
-      if (emailInput.match(mailformat)) {
-        return true;
+    validateEmail() {
+      const mailformat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (mailformat.test(this.email)) {
+        this.emailValidity = "valid";
       } else {
         this.emailValidity = "invalid";
-        return false;
       }
     },
   },
