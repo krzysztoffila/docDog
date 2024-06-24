@@ -41,8 +41,17 @@ export default {
         email: this.email,
         password: this.password,
       };
-      const { email, password } = userData;
-      alert(`login Data: ${email}, password: ${password}`);
+      // console.log(
+      //   `login Data: ${userData.email}, password: ${userData.password}`
+      // );
+      //  IF OK (200) TRY
+      this.$store.commit("Toast/addToast", {
+        message: `Hello, ${userData.email} !`,
+        variant: "alert-success",
+      });
+      // ELSE CATCH
+      // ---
+      // FINALLY ⬇️
       this.email = "";
       this.password = "";
     },
