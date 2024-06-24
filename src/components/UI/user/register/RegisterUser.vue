@@ -105,7 +105,10 @@ export default {
         this.emailValidity === "invalid" ||
         this.passwordValidity === "invalid"
       ) {
-        alert("Please fix the errors in the form.");
+        this.$store.commit("Toast/addToast", {
+          message: "Please fix the errors in the form.",
+          variant: "alert-error",
+        });
         return;
       }
 
@@ -121,12 +124,19 @@ export default {
           this.email = "";
           this.password = "";
           this.confirmPassword = "";
-          alert("User was successfully registered!");
+          this.$store.commit("Toast/addToast", {
+            message: "User was successfully registered!",
+            variant: "alert-success",
+          });
         } else {
           throw new Error("Registration failed");
         }
       } catch (error) {
         console.error(error);
+        this.$store.commit("Toast/addToast", {
+          message: "Registration failed. Please try again.",
+          variant: "alert-error",
+        });
       }
     },
 
@@ -151,5 +161,3 @@ export default {
   },
 };
 </script>
-
-<style></style>
