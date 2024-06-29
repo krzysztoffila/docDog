@@ -12,32 +12,26 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   computed: {
-    isVisible() {
-      return this.$store.state.modal.isVisible;
-    },
-    title() {
-      return this.$store.state.modal.title;
-    },
-    message() {
-      return this.$store.state.modal.message;
-    },
-    confirmText() {
-      return this.$store.state.modal.confirmText;
-    },
-    closeText() {
-      return this.$store.state.modal.closeText;
-    },
+    ...mapState({
+      isVisible: (state) => state.modal.isVisible,
+      title: (state) => state.modal.title,
+      message: (state) => state.modal.message,
+      confirmText: (state) => state.modal.confirmText,
+      closeText: (state) => state.modal.closeText,
+      onConfirm: (state) => state.modal.onConfirm,
+    }),
   },
   methods: {
     closeModal() {
       this.$store.dispatch("closeModal");
     },
     confirmAction() {
-      const confirmHandler = this.$store.state.modal.onConfirm;
-      if (confirmHandler) {
-        confirmHandler();
+      if (this.onConfirm) {
+        this.onConfirm();
       }
       this.closeModal();
     },
