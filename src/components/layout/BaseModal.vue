@@ -1,5 +1,5 @@
 <template>
-  <dialog ref="modal" class="modal">
+  <dialog ref="modal" class="modal" v-if="isVisible">
     <div class="modal-box">
       <h3 class="text-lg font-bold">{{ title }}</h3>
       <p class="py-4">{{ message }}</p>
@@ -13,38 +13,31 @@
 
 <script>
 export default {
-  props: {
-    title: {
-      type: String,
-      default: "Modal Title",
+  computed: {
+    isVisible() {
+      return this.$store.state.modal.isVisible;
     },
-    message: {
-      type: String,
-      default: "Modal Message",
+    title() {
+      return this.$store.state.modal.title;
     },
-    confirmText: {
-      type: String,
-      default: "Confirm",
+    message() {
+      return this.$store.state.modal.message;
     },
-    closeText: {
-      type: String,
-      default: "Close",
+    confirmText() {
+      return this.$store.state.modal.confirmText;
     },
-    onConfirm: {
-      type: Function,
-      default: null,
+    closeText() {
+      return this.$store.state.modal.closeText;
     },
   },
   methods: {
-    openModal() {
-      this.$refs.modal.showModal();
-    },
     closeModal() {
-      this.$refs.modal.close();
+      this.$store.dispatch("closeModal");
     },
     confirmAction() {
-      if (this.onConfirm) {
-        this.onConfirm();
+      const confirmHandler = this.$store.state.modal.onConfirm;
+      if (confirmHandler) {
+        confirmHandler();
       }
       this.closeModal();
     },
