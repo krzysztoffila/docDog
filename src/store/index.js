@@ -1,12 +1,14 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import Toast from "./modules/toast-module";
+import Modal from "./modules/modal-module";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
     modules: {
         Toast,
+        Modal,
     },
     state: {
         userIsLogged: true,

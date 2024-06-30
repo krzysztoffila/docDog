@@ -25,15 +25,18 @@
       </div>
     </div>
     <p>Wizyta: {{ doctorName }} dnia: {{ date }}</p>
+    <BaseModal />
   </div>
 </template>
 
 <script>
 import DoctorsComponent from "../../doctor/DoctorsComponent.vue";
 import TheCalendar from "../TheCalendar.vue";
+import BaseModal from "@/components/layout/BaseModal.vue";
+import { mapActions } from "vuex";
 
 export default {
-  components: { TheCalendar, DoctorsComponent },
+  components: { TheCalendar, DoctorsComponent, BaseModal },
   data() {
     return {
       doctorName: null,
@@ -41,6 +44,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions("Modal", ["openModal"]),
     addDoctor(doctorName) {
       this.doctorName = doctorName;
     },
@@ -48,20 +52,36 @@ export default {
       this.date = emitDate;
     },
     addVisit() {
-      confirm(
-        `Do you want to confirm an appointment with ${this.doctorName} on ${this.date} ?`
+      this.openModal({
+        title: "Confirm Appointment",
+        message: `Do you want to confirm an appointment with ${this.doctorName} on ${this.date}?`,
+        confirmText: "Confirm",
+        closeText: "Cancel",
+        onConfirm: this.handleConfirmVisit,
+      });
+    },
+    handleConfirmVisit() {
+      console.log(
+        `Appointment with ${this.doctorName} on ${this.date} confirmed`
       );
+      // TODO: LOGIC FOR CONFIRMING VISIT
     },
     backToDashboard() {
-      if (confirm(`Are you sure you want to cancel your appointment ?`)) {
-        this.doctorName = null;
-        this.date = null;
-        this.$router.push("/dashboard");
-      }
+      this.openModal({
+        title: "Cancel Appointment",
+        message: "Are you sure you want to cancel your appointment?",
+        confirmText: "Yes",
+        closeText: "No",
+        onConfirm: this.handleCancelVisit,
+      });
+    },
+    handleCancelVisit() {
+      this.doctorName = null;
+      this.date = null;
+      this.$router.push("/dashboard");
     },
   },
 };
 </script>
-
 <style>
 </style>
