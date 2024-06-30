@@ -46,8 +46,6 @@ DocDog is an application designed for scheduling veterinary appointments. The ap
 
 ### TODO
 
-- Replace default dialogs with modals
-- After registering an appointment, show a toast notification
 - Add environment variables for endpoints
   - Install `dotenv`
   - Create variables with paths
@@ -76,6 +74,8 @@ DocDog is an application designed for scheduling veterinary appointments. The ap
 - [DONE] Fixed issue: Computed property "selectedDoctor" was assigned to but it has no setter.
 - [DONE] Email validation
 - [DONE] Password validation
+- [DONE] Replace default dialogs with modals
+- [DONE] After registering an appointment, show a toast notification
 
 ## Project setup
 

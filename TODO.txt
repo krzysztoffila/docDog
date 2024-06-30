@@ -3,9 +3,7 @@ ENDPOINT: https://doc-dog-42e1c-default-rtdb.firebaseio.com/[ENDPOINT].json
 ------------
 ----TODO----
 ------------
-[TODO] Zamienic domyslne okienka na modale
 ---REGISTER VISIT---
-[TODO] Po domyslnej rejestracji wizyty widok toast z powiadomieniem
 ---MAIN STRUCTURE---
 [TODO] DODAĆ PRZEJSCIE DO ADD APPIONTMENT 
         [OK]-> KALENDARZ + LEKARZ 
@@ -44,3 +42,5 @@ ENDPOINT: https://doc-dog-42e1c-default-rtdb.firebaseio.com/[ENDPOINT].json
 [DONE] Computed property "selectedDoctor" was assigned to but it has no setter.
 [DONE] Walidacja maila
 [DONE] Walidacja hasła
+[DONE] Zamienic domyslne okienka na modale
+[DONE] Po domyslnej rejestracji wizyty widok toast z powiadomieniem
