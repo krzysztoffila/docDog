@@ -32,15 +32,15 @@
 
 <script>
 import BadgeElement from "@/components/layout/BaseBadge.vue";
-
+import { mapState } from "vuex";
 export default {
   components: {
     BadgeElement,
   },
   computed: {
-    appointments() {
-      return this.$store.state.user.appointmentsData;
-    },
+    ...mapState("User", {
+      appointments: (state) => state.user.appointmentsData,
+    }),
   },
 };
 </script>
