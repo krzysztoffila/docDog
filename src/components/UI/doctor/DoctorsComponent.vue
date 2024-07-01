@@ -25,28 +25,30 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from "vuex";
+
 export default {
   computed: {
-    doctors() {
-      return this.$store.state.doctors;
-    },
-    selectedDoctor: {
-      get() {
-        return this.$store.state.selectedDoctor;
+    ...mapState("Doctor", {
+      doctors: (state) => state.doctors,
+      selectedDoctor: {
+        get() {
+          return state.selectedDoctor;
+        },
+        set(value) {
+          this.setSelectedDoctor(value);
+        },
       },
-      set(value) {
-        this.$store.commit("setSelectedDoctor", value);
-      },
-    },
+    }),
   },
   methods: {
+    ...mapMutations("Doctor", ["setSelectedDoctor"]),
     selectDoctor() {
       this.$emit("select-doctor", this.selectedDoctor);
     },
   },
 };
 </script>
-
 
 <style>
 </style>
