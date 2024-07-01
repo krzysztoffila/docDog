@@ -17,14 +17,13 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   computed: {
-    fullName() {
-      return this.$store.state.user.fullName;
-    },
-    emailAddress() {
-      return this.$store.state.user.email;
-    },
+    ...mapState("User", {
+      fullName: (state) => state.user.fullName,
+      emailAddress: (state) => state.user.email,
+    }),
   },
 };
 </script>
