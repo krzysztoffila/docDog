@@ -10,41 +10,49 @@
         <input
           type="radio"
           name="doctor"
-          :value="doctor.name"
-          v-model="selectedDoctor"
+          :value="doctor.doctorId"
+          v-model="selectedDoctorId"
           class="mr-2"
-          @change="selectDoctor"
+          @change="selectDoctor(doctor)"
         />
         {{ doctor.name }}
       </label>
     </div>
     <div class="mt-4">
-      <p>Selected doctor: {{ selectedDoctor }}</p>
+      <p v-if="selectedDoctor">Selected doctor: {{ selectedDoctor.name }}</p>
+      <p v-else>Select a doctor</p>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   computed: {
     ...mapState("Doctor", {
       doctors: (state) => state.doctors,
+      selectedDoctor: (state) => state.selectedDoctor,
     }),
-    selectedDoctor: {
+    selectedDoctorId: {
       get() {
-        return this.$store.state.Doctor.selectedDoctor;
+        return this.selectedDoctor ? this.selectedDoctor.doctorId : null;
       },
-      set(value) {
-        this.setSelectedDoctor(value);
+      set(doctorId) {
+        const selectedDoctor = this.doctors.find(
+          (d) => d.doctorId === doctorId
+        );
+        if (selectedDoctor) {
+          this.setSelectedDoctor(selectedDoctor);
+          this.$emit("select-doctor", selectedDoctor);
+        }
       },
     },
   },
   methods: {
-    ...mapMutations("Doctor", ["setSelectedDoctor"]),
-    selectDoctor() {
-      this.$emit("select-doctor", this.selectedDoctor);
+    ...mapActions("Doctor", ["setSelectedDoctor"]),
+    selectDoctor(doctor) {
+      this.selectedDoctorId = doctor.doctorId;
     },
   },
 };
