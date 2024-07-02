@@ -31,15 +31,15 @@ export default {
   computed: {
     ...mapState("Doctor", {
       doctors: (state) => state.doctors,
-      selectedDoctor: {
-        get() {
-          return state.selectedDoctor;
-        },
-        set(value) {
-          this.setSelectedDoctor(value);
-        },
-      },
     }),
+    selectedDoctor: {
+      get() {
+        return this.$store.state.Doctor.selectedDoctor;
+      },
+      set(value) {
+        this.setSelectedDoctor(value);
+      },
+    },
   },
   methods: {
     ...mapMutations("Doctor", ["setSelectedDoctor"]),
