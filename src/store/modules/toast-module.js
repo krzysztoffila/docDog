@@ -14,4 +14,12 @@ export default {
             }
         },
     },
+    actions: {
+        addToast({ commit }, toast) {
+            commit("addToast", toast);
+        },
+        removeToast({ commit }, toast) {
+            commit("removeToast", toast);
+        },
+    },
 };
