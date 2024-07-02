@@ -45,13 +45,21 @@ export default {
   },
   methods: {
     ...mapActions("Modal", ["openModal"]),
-    addDoctor(doctorName) {
-      this.doctorName = doctorName;
+    ...mapActions("Toast", ["addToast"]),
+    addDoctor(doctor) {
+      this.doctorName = doctor.name;
     },
-    addDate(emitDate) {
-      this.date = emitDate;
+    addDate(date) {
+      this.date = date;
     },
     addVisit() {
+      if (!this.doctorName || !this.date) {
+        this.addToast({
+          message: "Please select a doctor and date before confirming.",
+          variant: "alert-warning",
+        });
+        return;
+      }
       this.openModal({
         title: "Confirm Appointment",
         message: `Do you want to confirm an appointment with ${this.doctorName} on ${this.date}?`,
@@ -61,10 +69,10 @@ export default {
       });
     },
     handleConfirmVisit() {
-      console.log(
-        `Appointment with ${this.doctorName} on ${this.date} confirmed`
-      );
-      // TODO: LOGIC FOR CONFIRMING VISIT
+      this.addToast({
+        message: `Appointment with ${this.doctorName} on ${this.date} confirmed.`,
+        variant: "alert-success",
+      });
     },
     backToDashboard() {
       this.openModal({
@@ -79,9 +87,14 @@ export default {
       this.doctorName = null;
       this.date = null;
       this.$router.push("/dashboard");
+      this.addToast({
+        message: "Appointment has been canceled",
+        variant: "alert-error",
+      });
     },
   },
 };
 </script>
+
 <style>
 </style>
