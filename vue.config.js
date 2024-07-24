@@ -10,5 +10,7 @@ module.exports = defineConfig({
         VUE_APP_FIREBASE_MESSAGING_SENDER_ID:
             process.env.VUE_APP_FIREBASE_MESSAGING_SENDER_ID,
         VUE_APP_FIREBASE_APP_ID: process.env.VUE_APP_FIREBASE_APP_ID,
+        VUE_APP_FIREBASE_DATABASE_URL:
+            process.env.VUE_APP_FIREBASE_DATABASE_URL,
     },
 });
