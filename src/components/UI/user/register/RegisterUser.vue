@@ -113,12 +113,13 @@ export default {
       }
 
       try {
-        const url = `${process.env.VUE_APP_FIREBASE_DATABASE_URL}/users.json`;
-        console.log("Sending request to:", url);
-        const response = await axios.post(url, {
-          email: this.email,
-          password: this.password,
-        });
+        const response = await axios.post(
+          `${process.env.VUE_APP_FIREBASE_DATABASE_URL}/users.json`,
+          {
+            email: this.email,
+            password: this.password,
+          }
+        );
         if (response.status === 200) {
           this.email = "";
           this.password = "";
