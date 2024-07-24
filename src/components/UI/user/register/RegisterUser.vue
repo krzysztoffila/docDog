@@ -71,7 +71,8 @@
 </template>
 
 <script>
-import axios from "axios";
+import { auth } from "@/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default {
   data() {
@@ -112,27 +113,27 @@ export default {
         return;
       }
 
+      if (this.password !== this.confirmPassword) {
+        this.$store.commit("Toast/addToast", {
+          message: "Passwords do not match.",
+          variant: "alert-error",
+        });
+        return;
+      }
+
       try {
-        const response = await axios.post(
-          `${process.env.VUE_APP_FIREBASE_DATABASE_URL}/users.json`,
-          {
-            email: this.email,
-            password: this.password,
-          }
-        );
-        if (response.status === 200) {
-          this.email = "";
-          this.password = "";
-          this.confirmPassword = "";
-          this.$store.commit("Toast/addToast", {
-            message: "User was successfully registered!",
-            variant: "alert-success",
-          });
-        } else {
-          throw new Error("Registration failed");
-        }
+        await createUserWithEmailAndPassword(auth, this.email, this.password);
+        this.email = "";
+        this.password = "";
+        this.confirmPassword = "";
+        this.$store.commit("Toast/addToast", {
+          message: "User was successfully registered!",
+          variant: "alert-success",
+        });
+        this.$router.push("/login");
       } catch (error) {
-        console.error(error);
+        console.error("Registration error code:", error.code);
+        console.error("Registration error message:", error.message);
         this.$store.commit("Toast/addToast", {
           message: "Registration failed. Please try again.",
           variant: "alert-error",

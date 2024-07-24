@@ -6,7 +6,7 @@
     >
       <input
         v-model="email"
-        type="text"
+        type="email"
         placeholder="Email"
         class="font-asap block rounded-md text-black bg-white w-full border-0 p-4 my-4"
       />
@@ -28,6 +28,9 @@
   </div>
 </template>
 <script>
+import { auth } from "@/firebase"; // Poprawny import z pliku firebase.js
+import { signInWithEmailAndPassword } from "firebase/auth";
+
 export default {
   data() {
     return {
@@ -36,22 +39,22 @@ export default {
     };
   },
   methods: {
-    submitFormLogin() {
-      const userData = {
-        email: this.email,
-        password: this.password,
-      };
-      // console.log(
-      //   `login Data: ${userData.email}, password: ${userData.password}`
-      // );
-      //  IF OK (200) TRY
-      this.$store.commit("Toast/addToast", {
-        message: `Hello, ${userData.email} !`,
-        variant: "alert-success",
-      });
-      // ELSE CATCH
-      // ---
-      // FINALLY ⬇️
+    async submitFormLogin() {
+      try {
+        await signInWithEmailAndPassword(auth, this.email, this.password);
+        this.$store.commit("Toast/addToast", {
+          message: `Hello, ${this.email}!`,
+          variant: "alert-success",
+        });
+        this.$router.push("/dashboard"); // Redirect after successful login
+      } catch (error) {
+        console.error("Login error code:", error.code);
+        console.error("Login error message:", error.message);
+        this.$store.commit("Toast/addToast", {
+          message: "Login failed. Please check your credentials.",
+          variant: "alert-danger",
+        });
+      }
       this.email = "";
       this.password = "";
     },
