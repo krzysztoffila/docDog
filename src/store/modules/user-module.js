@@ -4,7 +4,9 @@ export default {
     namespaced: true,
     state: {
         userIsLogged: !!localStorage.getItem("token"),
-        user: JSON.parse(localStorage.getItem("user")) || null,
+        user: JSON.parse(localStorage.getItem("user")) || {
+            appointmentsData: [],
+        },
         selectedDoctor: null,
     },
     mutations: {
@@ -13,7 +15,7 @@ export default {
             state.userIsLogged = true;
         },
         LOGOUT(state) {
-            state.user = null;
+            state.user = { appointmentsData: [] };
             state.userIsLogged = false;
         },
     },
@@ -44,8 +46,6 @@ export default {
             const token = localStorage.getItem("token");
             if (token) {
                 axios.defaults.headers.common["Authorization"] = token;
-                // Optionally, fetch user data from your API if necessary
-                // e.g., axios.get("/api/auth/user").then(response => commit("SET_USER", response.data.user));
                 commit("SET_USER", JSON.parse(localStorage.getItem("user")));
             } else {
                 commit("LOGOUT");
@@ -55,7 +55,6 @@ export default {
     getters: {
         userIsLogged: (state) => state.userIsLogged,
         user: (state) => state.user,
-        appointments: (state) =>
-            state.user ? state.user.appointmentsData : [],
+        appointments: (state) => state.user?.appointmentsData || [],
     },
 };

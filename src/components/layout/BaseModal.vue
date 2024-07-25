@@ -27,7 +27,6 @@ export default {
   },
   watch: {
     isVisible(val) {
-      console.log("Modal visibility changed:", val);
       if (val) {
         this.$refs.modal.showModal();
       } else {

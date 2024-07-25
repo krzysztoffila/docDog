@@ -33,13 +33,14 @@
 <script>
 import BadgeElement from "@/components/layout/BaseBadge.vue";
 import { mapState } from "vuex";
+
 export default {
   components: {
     BadgeElement,
   },
   computed: {
     ...mapState("User", {
-      appointments: (state) => state.user.appointmentsData,
+      appointments: (state) => (state.user ? state.user.appointmentsData : []),
     }),
   },
 };
