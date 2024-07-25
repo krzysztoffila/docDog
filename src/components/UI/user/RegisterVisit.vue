@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import DoctorsComponent from "../../doctor/DoctorsComponent.vue";
-import TheCalendar from "../TheCalendar.vue";
+import DoctorsComponent from "@/components/UI/doctor/DoctorsComponent.vue";
+import TheCalendar from "@/components/UI/user/TheCalendar.vue";
 import BaseModal from "@/components/layout/BaseModal.vue";
 import { mapActions } from "vuex";
 
