@@ -1,5 +1,18 @@
 import axios from "axios";
 
+axios.interceptors.request.use(
+    (config) => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`;
+        }
+        return config;
+    },
+    (error) => {
+        return Promise.reject(error);
+    }
+);
+
 export default {
     namespaced: true,
     state: {
@@ -8,15 +21,21 @@ export default {
             appointmentsData: [],
         },
         selectedDoctor: null,
+        error: null,
     },
     mutations: {
         SET_USER(state, user) {
             state.user = user;
             state.userIsLogged = true;
+            state.error = null; // Resetowanie błędów przy pomyślnym logowaniu
         },
         LOGOUT(state) {
             state.user = { appointmentsData: [] };
             state.userIsLogged = false;
+            state.error = null; // Resetowanie błędów przy wylogowaniu
+        },
+        SET_ERROR(state, error) {
+            state.error = error;
         },
     },
     actions: {
@@ -27,24 +46,25 @@ export default {
 
                 localStorage.setItem("token", token);
                 localStorage.setItem("user", JSON.stringify(user));
-                axios.defaults.headers.common["Authorization"] = token;
 
                 commit("SET_USER", user);
                 return response;
             } catch (error) {
+                commit(
+                    "SET_ERROR",
+                    error.response?.data?.message || "Login failed"
+                );
                 throw error;
             }
         },
         logout({ commit }) {
             localStorage.removeItem("token");
             localStorage.removeItem("user");
-            delete axios.defaults.headers.common["Authorization"];
             commit("LOGOUT");
         },
         fetchUser({ commit }) {
             const token = localStorage.getItem("token");
             if (token) {
-                axios.defaults.headers.common["Authorization"] = token;
                 commit("SET_USER", JSON.parse(localStorage.getItem("user")));
             } else {
                 commit("LOGOUT");
@@ -55,5 +75,6 @@ export default {
         userIsLogged: (state) => state.userIsLogged,
         user: (state) => state.user,
         appointments: (state) => state.user?.appointmentsData || [],
+        error: (state) => state.error,
     },
 };
