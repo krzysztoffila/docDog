@@ -27,12 +27,12 @@ export default {
         SET_USER(state, user) {
             state.user = user;
             state.userIsLogged = true;
-            state.error = null; // Resetowanie błędów przy pomyślnym logowaniu
+            state.error = null;
         },
         LOGOUT(state) {
             state.user = { appointmentsData: [] };
             state.userIsLogged = false;
-            state.error = null; // Resetowanie błędów przy wylogowaniu
+            state.error = null;
         },
         SET_ERROR(state, error) {
             state.error = error;
