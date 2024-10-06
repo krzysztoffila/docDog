@@ -23,8 +23,7 @@ export default {
         async login({ commit }, userData) {
             try {
                 const response = await axios.post("/api/auth/login", userData);
-                const user = response.data.user;
-                const token = response.data.token;
+                const { user, token } = response.data;
 
                 localStorage.setItem("token", token);
                 localStorage.setItem("user", JSON.stringify(user));
