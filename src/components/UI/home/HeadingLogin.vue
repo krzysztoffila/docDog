@@ -25,10 +25,8 @@
           required
         />
         <label class="label">
-          <router-link to="/register">
-            <a href="#" class="label-text-alt link link-hover"
-              >Already not registred? - Register!</a
-            >
+          <router-link to="/register" class="label-text-alt link link-hover">
+            Already not registered? - Register!
           </router-link>
         </label>
       </div>
@@ -43,6 +41,7 @@
 import BaseButton from "@/components/layout/BaseButton.vue";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import Cookies from "js-cookie";
+
 export default {
   components: { BaseButton },
   data() {
