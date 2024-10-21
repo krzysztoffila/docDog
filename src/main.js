@@ -6,10 +6,11 @@ import "./index.css";
 
 Vue.config.productionTip = false;
 
-store.dispatch("User/fetchUser").then(() => {
-    new Vue({
-        router,
-        store,
-        render: (h) => h(App),
-    }).$mount("#app");
-});
+new Vue({
+    router,
+    store,
+    render: (h) => h(App),
+    created() {
+        store.dispatch("User/fetchUser");
+    },
+}).$mount("#app");

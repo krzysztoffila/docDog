@@ -11,20 +11,16 @@ export default {
         },
     },
     mutations: {
-        openModal(state) {
-            state.modal.isVisible = true;
+        openModal(state, payload) {
+            state.modal = { ...state.modal, ...payload, isVisible: true };
         },
         closeModal(state) {
             state.modal.isVisible = false;
         },
-        setModalContent(state, payload) {
-            state.modal = { ...state.modal, ...payload };
-        },
     },
     actions: {
         openModal({ commit }, payload) {
-            commit("setModalContent", payload);
-            commit("openModal");
+            commit("openModal", payload);
         },
         closeModal({ commit }) {
             commit("closeModal");

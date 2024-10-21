@@ -28,8 +28,8 @@
   </div>
 </template>
 <script>
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import Cookies from "js-cookie";
+import { auth } from "@/firebase"; // Poprawny import z pliku firebase.js
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default {
   data() {
@@ -40,26 +40,16 @@ export default {
   },
   methods: {
     async submitFormLogin() {
-      const auth = getAuth();
       try {
-        const userCredential = await signInWithEmailAndPassword(
-          auth,
-          this.email,
-          this.password
-        );
-        const user = userCredential.user;
-
-        const idToken = await user.getIdToken();
-        sessionStorage.setItem("userToken", idToken);
-        Cookies.set("userToken", idToken, { expires: 1 });
-
-        this.$store.commit("user/setUser", user);
+        await signInWithEmailAndPassword(auth, this.email, this.password);
         this.$store.commit("Toast/addToast", {
           message: `Hello, ${this.email}!`,
           variant: "alert-success",
         });
-        this.$router.push("/dashboard");
+        this.$router.push("/dashboard"); // Redirect after successful login
       } catch (error) {
+        console.error("Login error code:", error.code);
+        console.error("Login error message:", error.message);
         this.$store.commit("Toast/addToast", {
           message: "Login failed. Please check your credentials.",
           variant: "alert-danger",

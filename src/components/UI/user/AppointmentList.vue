@@ -7,7 +7,7 @@
         :key="index"
         class="flex items-center mb-2"
       >
-        <BaseBadge>
+        <BadgeElement>
           <template v-if="appointment.status === 'Pending'" #pending>
             <div class="badge-info badge mr-4">{{ appointment.status }}</div>
             {{ appointment.date }} - {{ appointment.doctor }}
@@ -24,23 +24,22 @@
             <div class="badge-info badge mr-4">{{ appointment.status }}</div>
             {{ appointment.date }} - {{ appointment.doctor }}
           </template>
-        </BaseBadge>
+        </BadgeElement>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import BaseBadge from "@/components/layout/BaseBadge.vue";
+import BadgeElement from "@/components/layout/BaseBadge.vue";
 import { mapState } from "vuex";
-
 export default {
   components: {
-    BaseBadge,
+    BadgeElement,
   },
   computed: {
     ...mapState("User", {
-      appointments: (state) => (state.user ? state.user.appointmentsData : []),
+      appointments: (state) => state.user.appointmentsData,
     }),
   },
 };
