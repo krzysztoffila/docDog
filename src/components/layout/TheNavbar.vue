@@ -2,7 +2,13 @@
   <div class="navbar bg-base-100">
     <div class="flex-1">
       <router-link to="/">
-        <a class="btn btn-ghost text-xl">docDog</a>
+        <a class="btn btn-ghost text-xl"
+          ><img
+            class="h-8 w-auto"
+            src="https://tailwindui.com/img/logos/mark.svg?color=white"
+            alt="Tailwind Logo"
+          />docDog</a
+        >
       </router-link>
     </div>
     <div class="flex-none gap-2">
@@ -50,6 +56,7 @@ export default {
     async handleLogout() {
       try {
         await this.logout();
+        console.log("User logged out successfully");
         this.$store.commit("Toast/addToast", {
           message: "Successfully logged out!",
           variant: "alert-success",
@@ -64,9 +71,16 @@ export default {
       }
     },
   },
+  watch: {
+    userIsLogged(newVal) {
+      console.log("userIsLogged changed: ", newVal);
+    },
+  },
+  created() {
+    console.log("Navbar created, userIsLogged: ", this.userIsLogged);
+  },
 };
 </script>
 
 <style scoped>
-/* Twoje style tutaj */
 </style>
