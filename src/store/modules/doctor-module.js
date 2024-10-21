@@ -2,9 +2,9 @@ export default {
     namespaced: true,
     state: {
         doctors: [
-            { doctorId: 1, name: "Dr. Dolittle" },
-            { doctorId: 2, name: "Dr. Ventura" },
-            { doctorId: 3, name: "Dr. Oetker" },
+            { doctorId: 0, name: "Dr. Dolittle" },
+            { doctorId: 1, name: "Dr. Ventura" },
+            { doctorId: 2, name: "Dr. Oetker" },
         ],
         selectedDoctor: null,
     },
