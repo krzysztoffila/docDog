@@ -1,6 +1,17 @@
 <template>
   <div class="hero min-h-screen bg-cover bg-center">
-    <div class="hero-content flex-col lg:flex-row-reverse">
+    <picture>
+      <source
+        srcset="@/assets/header-background-image.webp"
+        type="image/webp"
+      />
+      <img
+        src="@/assets/header-background-image.webp"
+        alt="Background image"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+    </picture>
+    <div class="hero-content relative flex-col lg:flex-row-reverse">
       <div class="text-center lg:text-left glass p-5 rounded text-white">
         <h1 class="text-5xl font-bold">{{ loginText }}</h1>
         <p class="py-6">
@@ -34,13 +45,12 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  width: 80%;
-  max-width: 1100px;
-}
 .hero {
-  color: #0dcaf0;
-  padding: 300px 50px;
-  background-image: url("@/assets/header-background-image.webp");
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
 }
 </style>

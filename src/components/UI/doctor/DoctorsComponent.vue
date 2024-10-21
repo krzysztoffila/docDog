@@ -11,7 +11,7 @@
           type="radio"
           name="doctor"
           :value="doctor.doctorId"
-          v-model="selectedDoctorId"
+          :checked="selectedDoctorId === doctor.doctorId"
           class="mr-2"
           @change="selectDoctor(doctor)"
         />
@@ -34,25 +34,15 @@ export default {
       doctors: (state) => state.doctors,
       selectedDoctor: (state) => state.selectedDoctor,
     }),
-    selectedDoctorId: {
-      get() {
-        return this.selectedDoctor ? this.selectedDoctor.doctorId : null;
-      },
-      set(doctorId) {
-        const selectedDoctor = this.doctors.find(
-          (d) => d.doctorId === doctorId
-        );
-        if (selectedDoctor) {
-          this.setSelectedDoctor(selectedDoctor);
-          this.$emit("select-doctor", selectedDoctor);
-        }
-      },
+    selectedDoctorId() {
+      return this.selectedDoctor ? this.selectedDoctor.doctorId : null;
     },
   },
   methods: {
     ...mapActions("Doctor", ["setSelectedDoctor"]),
     selectDoctor(doctor) {
-      this.selectedDoctorId = doctor.doctorId;
+      this.setSelectedDoctor(doctor);
+      this.$emit("select-doctor", doctor);
     },
   },
 };
